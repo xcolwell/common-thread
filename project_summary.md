@@ -1,33 +1,25 @@
 # Project Title
-Insert the name of your project
+```
+C O M M	O N
+T H R E	A D
+```
 
 ## Authors
-- Insert main author name, surname, github account
-- Insert other author(s) name, surname, github account (one per list element)
+- Brien Colwell, @xcolwell
 
 ## Description
-Insert a description containing about 100 to 150 words, including your motivation and the meaning behind your idea and execution. The Judges will be keen to know how your idea pushes the boundaries of code and technology. 
+
+Common Thread is a distributed sculpture that links audio visual moments from participants' Android phones into a single linear thread with the properties of physical space - continuous, always present, with participants occupying roughly the same amount of room. The linear thread creates a narrative that equally unifies all the participants, juxtaposed with the nonlinear and asymmetric online narrative in which it exists. The thread winds continuously through each participants' screen, uniformly adding and transmitting moments from one participant to the next. The project will explore 1. a zoomed in view on part of the thread, where the screen is moving along the thread, playing video and audio it encounters, and occasionally capturing new moments from the front-facing camera and mic; 2. a zoomed out view of the entire thread, providing an overview of the complete narrative; 3. a mounted installation of multiple devices in the zoomed-in view, to create perceptual continuity in a permanent physical space, like multiple windows into an aquarium. I hope the emotional effect of the common thread will be similar to an aquarium, calming and hopefully, comforting.
 
 ## Link to Prototype
-NOTE: If your project lives online you can add one or more links here. Make sure you have a stable version of your project running before linking it.
-
-[Example Link](http://www.google.com "Example Link")
 
 ## Example Code
-NOTE: Wrap your code blocks or any code citation by using ``` like the example below.
-```
-function test() {
-  console.log("Printing a test");
-}
-```
-## Links to External Libraries
- NOTE: You can also use this space to link to external libraries or Github repositories you used on your project.
 
-[Example Link](http://www.google.com "Example Link")
+## Links to External Libraries
 
 ## Images & Videos
-NOTE: For additional images you can either use a relative link to an image on this repo or an absolute link to an externally hosted image.
 
-![Example Image](project_images/cover.jpg?raw=true "Example Image")
+This project is inspired by previous explorations where I attempted to link space into single movements [1, 2]. Visually the sculpture will resemble a rainbow, with segments of the rainbow composed of short video loops. The video loops will be processed to a gestalt form, to reflect by not perfectly capture the video, into a more primal form, inspired by my work in Enter & Re-Exit [3].
 
-https://www.youtube.com/watch?v=30yGOxJJ2PQ
+
+
