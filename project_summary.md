@@ -4,8 +4,6 @@ C O M M	O N
 T H R E	A D
 ```
 
-<img src="http://lodes.nu/common_thread.png" width="1000" height="500">
-
 ## Authors
 - Brien Colwell, @xcolwell
 
@@ -26,12 +24,12 @@ This project is inspired by previous explorations where I attempted to link spac
 
 Random Walk in Multiscale (2010)
 
-<iframe width="960" height="720" src="https://www.youtube.com/embed/A8An3xz1QiU" frameborder="0" allowfullscreen></iframe>
+<object width="960" height="540"><param name="movie" value="//www.youtube.com/v/A8An3xz1QiU?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/A8An3xz1QiU?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="960" height="540" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 [YouTube](https://www.youtube.com/embed/A8An3xz1QiU)
 
 Euler Walk through a Cube (2008)
 
-<iframe width="960" height="720" src="https://www.youtube.com/embed/1qs33VxkRjE" frameborder="0" allowfullscreen></iframe>
+<object width="960" height="720"><param name="movie" value="//www.youtube.com/v/1qs33VxkRjE?hl=en_US&amp;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/1qs33VxkRjE?hl=en_US&amp;version=3" type="application/x-shockwave-flash" width="960" height="720" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 [YouTube](https://www.youtube.com/embed/1qs33VxkRjE)
 
 Enter & Re-Exit (2008), gestalt image processing example
