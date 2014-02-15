@@ -4,6 +4,8 @@ C O M M	O N
 T H R E	A D
 ```
 
+<img src="http://lodes.nu/common_thread.png" width="1000" height="500">
+
 ## Authors
 - Brien Colwell, @xcolwell
 
@@ -23,14 +25,14 @@ This project is inspired by previous explorations where I attempted to link spac
 
 1. Random Walk in Multiscale (2010)
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/A8An3xz1QiU" frameborder="0" allowfullscreen></iframe>
+<iframe width="960" height="720" src="https://www.youtube.com/embed/A8An3xz1QiU" frameborder="0" allowfullscreen></iframe>
 
 2. Euler Walk through a Cube (2008)
 
-<iframe width="420" height="315" src="//www.youtube.com/embed/1qs33VxkRjE" frameborder="0" allowfullscreen></iframe>
+<iframe width="960" height="720" src="https://www.youtube.com/embed/1qs33VxkRjE" frameborder="0" allowfullscreen></iframe>
 
 3. Enter & Re-Exit, gestalt image processing example
 
-<img src="https://github.com/xcolwell/devart-template/blob/master/project_images/ere_gestalt.png" width="100%">
+<img src="http://lodes.nu/ere_gestalt.png" width="960" height="720">
 
 
