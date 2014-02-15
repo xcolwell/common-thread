@@ -24,12 +24,12 @@ This project is inspired by previous explorations where I attempted to link spac
 
 Random Walk in Multiscale (2010)
 
-<object width="960" height="540"><param name="movie" value="//www.youtube.com/v/A8An3xz1QiU?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/A8An3xz1QiU?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="960" height="540" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<object width="960" height="540"><param name="movie" value="https://www.youtube.com/v/A8An3xz1QiU?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="https://www.youtube.com/v/A8An3xz1QiU?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="960" height="540" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 [YouTube](https://www.youtube.com/embed/A8An3xz1QiU)
 
 Euler Walk through a Cube (2008)
 
-<object width="960" height="720"><param name="movie" value="//www.youtube.com/v/1qs33VxkRjE?hl=en_US&amp;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/1qs33VxkRjE?hl=en_US&amp;version=3" type="application/x-shockwave-flash" width="960" height="720" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<object width="960" height="720"><param name="movie" value="https://www.youtube.com/v/1qs33VxkRjE?hl=en_US&amp;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="https://www.youtube.com/v/1qs33VxkRjE?hl=en_US&amp;version=3" type="application/x-shockwave-flash" width="960" height="720" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 [YouTube](https://www.youtube.com/embed/1qs33VxkRjE)
 
 Enter & Re-Exit (2008), gestalt image processing example
