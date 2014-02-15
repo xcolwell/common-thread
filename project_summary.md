@@ -22,12 +22,15 @@ Common Thread is a distributed sculpture that links audio visual moments from pa
 This project is inspired by previous explorations where I attempted to link space into single movements [1, 2]. Visually the sculpture will resemble a rainbow, with segments of the rainbow composed of short video loops. The video loops will be processed to a gestalt form, to reflect by not perfectly capture the video, into a more primal form, inspired by my work in Enter & Re-Exit [3].
 
 1. Random Walk in Multiscale (2010)
-http://www.youtube.com/watch?v=A8An3xz1QiU&feature=youtu.be
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/A8An3xz1QiU" frameborder="0" allowfullscreen></iframe>
 
 2. Euler Walk through a Cube (2008)
-http://www.youtube.com/watch?v=1qs33VxkRjE&feature=youtu.be
+
+<iframe width="420" height="315" src="//www.youtube.com/embed/1qs33VxkRjE" frameborder="0" allowfullscreen></iframe>
 
 3. Enter & Re-Exit, gestalt image processing example
-![ere_gestalt]
+
+<img src="https://github.com/xcolwell/devart-template/blob/master/project_images/ere_gestalt.png" width="100%">
 
 
