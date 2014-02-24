@@ -3,8 +3,7 @@
         "apis": [
         ],
         "platforms": [
-            "android",
-            "app engine"
+            "android"
         ],
         "toolkits": [
         ]
