@@ -13,6 +13,10 @@ Common Thread is a distributed sculpture that links audio visual moments from pa
 
 ## Link to Prototype
 
+[http://rainbow.io](http://rainbow.io)
+
+[Common Thread on the Play Store](http://play.google.com/store/apps/details?id=io.rainbow.commonthread)
+
 ## Example Code
 
 ## Links to External Libraries
