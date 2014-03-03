@@ -7,26 +7,37 @@ option optimize_for = LITE_RUNTIME;
 
 message Device {
 	repeated bytes id = 1;
-	repeated float position = 2;
+	repeated double position = 2;
 	repeated float orientation = 3;
 
-	repeated uint32 sequence = 4;
+	optional Device anchor = 4;
+}
+
+message DeviceSequence {
+	repeated uint32 sequence = 1;
 	/* corner and control points from previous to next */
-	repeated float interpolation = 5;
+	repeated float interpolation = 2;
 	/* spline distances from previous to next (approximate) */
-	repeated float distances = 6;
+	repeated float distances = 3;
 }
 
 message Moment {
 	repeated bytes id = 1;
 	optional uint64 creation_time = 2;
 	repeated bytes data = 3;
+}
 
-	optional double sequence = 4;
-	optional bool delete = 5;
+message MomentSequence {
+	optional double sequence = 1;
+	optional bool deleted = 2;
 }
 
 message Sync {
-	repeated bytes ids = 1;
-	repeated uint32 lengths = 2;
+	optional Device device = 1;
+
+	repeated bytes device_ids = 2;
+	repeated uint32 device_id_lengths = 3;
+
+	repeated bytes moment_ids = 4;
+	repeated uint32 moment_id_lengths = 5;
 }
