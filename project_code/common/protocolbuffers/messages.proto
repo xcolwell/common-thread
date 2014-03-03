@@ -1,0 +1,32 @@
+
+option java_package = "io.rainbow.commonthread.protocolbuffers";
+option java_outer_classname = "MessageProtos";
+option optimize_for = LITE_RUNTIME;
+
+/* all messages are bi-directional (client to server, server to client) */
+
+message Device {
+	repeated bytes id = 1;
+	repeated float position = 2;
+	repeated float orientation = 3;
+
+	repeated uint32 sequence = 4;
+	/* corner and control points from previous to next */
+	repeated float interpolation = 5;
+	/* spline distances from previous to next (approximate) */
+	repeated float distances = 6;
+}
+
+message Moment {
+	repeated bytes id = 1;
+	optional uint64 creation_time = 2;
+	repeated bytes data = 3;
+
+	optional double sequence = 4;
+	optional bool delete = 5;
+}
+
+message Sync {
+	repeated bytes ids = 1;
+	repeated uint32 lengths = 2;
+}

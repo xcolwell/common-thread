@@ -1,0 +1,6 @@
+#!/bin/bash
+
+out_dir=src/main/java
+mkdir -p $out_dir
+
+protoc --java_out=$out_dir protocolbuffers/messages.proto
