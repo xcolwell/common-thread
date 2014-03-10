@@ -25,19 +25,19 @@ public final class MessageProtos {
      */
     com.google.protobuf.ByteString getId(int index);
 
-    // repeated float position = 2;
+    // repeated double position = 2;
     /**
-     * <code>repeated float position = 2;</code>
+     * <code>repeated double position = 2;</code>
      */
-    java.util.List<java.lang.Float> getPositionList();
+    java.util.List<java.lang.Double> getPositionList();
     /**
-     * <code>repeated float position = 2;</code>
+     * <code>repeated double position = 2;</code>
      */
     int getPositionCount();
     /**
-     * <code>repeated float position = 2;</code>
+     * <code>repeated double position = 2;</code>
      */
-    float getPosition(int index);
+    double getPosition(int index);
 
     // repeated float orientation = 3;
     /**
@@ -53,71 +53,15 @@ public final class MessageProtos {
      */
     float getOrientation(int index);
 
-    // repeated uint32 sequence = 4;
+    // optional .Device anchor = 4;
     /**
-     * <code>repeated uint32 sequence = 4;</code>
+     * <code>optional .Device anchor = 4;</code>
      */
-    java.util.List<java.lang.Integer> getSequenceList();
+    boolean hasAnchor();
     /**
-     * <code>repeated uint32 sequence = 4;</code>
+     * <code>optional .Device anchor = 4;</code>
      */
-    int getSequenceCount();
-    /**
-     * <code>repeated uint32 sequence = 4;</code>
-     */
-    int getSequence(int index);
-
-    // repeated float interpolation = 5;
-    /**
-     * <code>repeated float interpolation = 5;</code>
-     *
-     * <pre>
-     * corner and control points from previous to next 
-     * </pre>
-     */
-    java.util.List<java.lang.Float> getInterpolationList();
-    /**
-     * <code>repeated float interpolation = 5;</code>
-     *
-     * <pre>
-     * corner and control points from previous to next 
-     * </pre>
-     */
-    int getInterpolationCount();
-    /**
-     * <code>repeated float interpolation = 5;</code>
-     *
-     * <pre>
-     * corner and control points from previous to next 
-     * </pre>
-     */
-    float getInterpolation(int index);
-
-    // repeated float distances = 6;
-    /**
-     * <code>repeated float distances = 6;</code>
-     *
-     * <pre>
-     * spline distances from previous to next (approximate) 
-     * </pre>
-     */
-    java.util.List<java.lang.Float> getDistancesList();
-    /**
-     * <code>repeated float distances = 6;</code>
-     *
-     * <pre>
-     * spline distances from previous to next (approximate) 
-     * </pre>
-     */
-    int getDistancesCount();
-    /**
-     * <code>repeated float distances = 6;</code>
-     *
-     * <pre>
-     * spline distances from previous to next (approximate) 
-     * </pre>
-     */
-    float getDistances(int index);
+    io.rainbow.commonthread.protocolbuffers.MessageProtos.Device getAnchor();
   }
   /**
    * Protobuf type {@code Device}
@@ -170,23 +114,23 @@ public final class MessageProtos {
               id_.add(input.readBytes());
               break;
             }
-            case 21: {
+            case 17: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                position_ = new java.util.ArrayList<java.lang.Float>();
+                position_ = new java.util.ArrayList<java.lang.Double>();
                 mutable_bitField0_ |= 0x00000002;
               }
-              position_.add(input.readFloat());
+              position_.add(input.readDouble());
               break;
             }
             case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
-                position_ = new java.util.ArrayList<java.lang.Float>();
+                position_ = new java.util.ArrayList<java.lang.Double>();
                 mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
-                position_.add(input.readFloat());
+                position_.add(input.readDouble());
               }
               input.popLimit(limit);
               break;
@@ -212,67 +156,17 @@ public final class MessageProtos {
               input.popLimit(limit);
               break;
             }
-            case 32: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                sequence_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              sequence_.add(input.readUInt32());
-              break;
-            }
             case 34: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
-                sequence_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
+              io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = anchor_.toBuilder();
               }
-              while (input.getBytesUntilLimit() > 0) {
-                sequence_.add(input.readUInt32());
+              anchor_ = input.readMessage(io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(anchor_);
+                anchor_ = subBuilder.buildPartial();
               }
-              input.popLimit(limit);
-              break;
-            }
-            case 45: {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                interpolation_ = new java.util.ArrayList<java.lang.Float>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              interpolation_.add(input.readFloat());
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
-                interpolation_ = new java.util.ArrayList<java.lang.Float>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                interpolation_.add(input.readFloat());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 53: {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                distances_ = new java.util.ArrayList<java.lang.Float>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              distances_.add(input.readFloat());
-              break;
-            }
-            case 50: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020) && input.getBytesUntilLimit() > 0) {
-                distances_ = new java.util.ArrayList<java.lang.Float>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                distances_.add(input.readFloat());
-              }
-              input.popLimit(limit);
+              bitField0_ |= 0x00000001;
               break;
             }
           }
@@ -292,15 +186,6 @@ public final class MessageProtos {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           orientation_ = java.util.Collections.unmodifiableList(orientation_);
         }
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          sequence_ = java.util.Collections.unmodifiableList(sequence_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-          interpolation_ = java.util.Collections.unmodifiableList(interpolation_);
-        }
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-          distances_ = java.util.Collections.unmodifiableList(distances_);
-        }
         makeExtensionsImmutable();
       }
     }
@@ -319,6 +204,7 @@ public final class MessageProtos {
       return PARSER;
     }
 
+    private int bitField0_;
     // repeated bytes id = 1;
     public static final int ID_FIELD_NUMBER = 1;
     private java.util.List<com.google.protobuf.ByteString> id_;
@@ -342,26 +228,26 @@ public final class MessageProtos {
       return id_.get(index);
     }
 
-    // repeated float position = 2;
+    // repeated double position = 2;
     public static final int POSITION_FIELD_NUMBER = 2;
-    private java.util.List<java.lang.Float> position_;
+    private java.util.List<java.lang.Double> position_;
     /**
-     * <code>repeated float position = 2;</code>
+     * <code>repeated double position = 2;</code>
      */
-    public java.util.List<java.lang.Float>
+    public java.util.List<java.lang.Double>
         getPositionList() {
       return position_;
     }
     /**
-     * <code>repeated float position = 2;</code>
+     * <code>repeated double position = 2;</code>
      */
     public int getPositionCount() {
       return position_.size();
     }
     /**
-     * <code>repeated float position = 2;</code>
+     * <code>repeated double position = 2;</code>
      */
-    public float getPosition(int index) {
+    public double getPosition(int index) {
       return position_.get(index);
     }
 
@@ -388,106 +274,27 @@ public final class MessageProtos {
       return orientation_.get(index);
     }
 
-    // repeated uint32 sequence = 4;
-    public static final int SEQUENCE_FIELD_NUMBER = 4;
-    private java.util.List<java.lang.Integer> sequence_;
+    // optional .Device anchor = 4;
+    public static final int ANCHOR_FIELD_NUMBER = 4;
+    private io.rainbow.commonthread.protocolbuffers.MessageProtos.Device anchor_;
     /**
-     * <code>repeated uint32 sequence = 4;</code>
+     * <code>optional .Device anchor = 4;</code>
      */
-    public java.util.List<java.lang.Integer>
-        getSequenceList() {
-      return sequence_;
+    public boolean hasAnchor() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>repeated uint32 sequence = 4;</code>
+     * <code>optional .Device anchor = 4;</code>
      */
-    public int getSequenceCount() {
-      return sequence_.size();
-    }
-    /**
-     * <code>repeated uint32 sequence = 4;</code>
-     */
-    public int getSequence(int index) {
-      return sequence_.get(index);
-    }
-
-    // repeated float interpolation = 5;
-    public static final int INTERPOLATION_FIELD_NUMBER = 5;
-    private java.util.List<java.lang.Float> interpolation_;
-    /**
-     * <code>repeated float interpolation = 5;</code>
-     *
-     * <pre>
-     * corner and control points from previous to next 
-     * </pre>
-     */
-    public java.util.List<java.lang.Float>
-        getInterpolationList() {
-      return interpolation_;
-    }
-    /**
-     * <code>repeated float interpolation = 5;</code>
-     *
-     * <pre>
-     * corner and control points from previous to next 
-     * </pre>
-     */
-    public int getInterpolationCount() {
-      return interpolation_.size();
-    }
-    /**
-     * <code>repeated float interpolation = 5;</code>
-     *
-     * <pre>
-     * corner and control points from previous to next 
-     * </pre>
-     */
-    public float getInterpolation(int index) {
-      return interpolation_.get(index);
-    }
-
-    // repeated float distances = 6;
-    public static final int DISTANCES_FIELD_NUMBER = 6;
-    private java.util.List<java.lang.Float> distances_;
-    /**
-     * <code>repeated float distances = 6;</code>
-     *
-     * <pre>
-     * spline distances from previous to next (approximate) 
-     * </pre>
-     */
-    public java.util.List<java.lang.Float>
-        getDistancesList() {
-      return distances_;
-    }
-    /**
-     * <code>repeated float distances = 6;</code>
-     *
-     * <pre>
-     * spline distances from previous to next (approximate) 
-     * </pre>
-     */
-    public int getDistancesCount() {
-      return distances_.size();
-    }
-    /**
-     * <code>repeated float distances = 6;</code>
-     *
-     * <pre>
-     * spline distances from previous to next (approximate) 
-     * </pre>
-     */
-    public float getDistances(int index) {
-      return distances_.get(index);
+    public io.rainbow.commonthread.protocolbuffers.MessageProtos.Device getAnchor() {
+      return anchor_;
     }
 
     private void initFields() {
       id_ = java.util.Collections.emptyList();
       position_ = java.util.Collections.emptyList();
       orientation_ = java.util.Collections.emptyList();
-      sequence_ = java.util.Collections.emptyList();
-      interpolation_ = java.util.Collections.emptyList();
-      distances_ = java.util.Collections.emptyList();
+      anchor_ = io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -505,19 +312,13 @@ public final class MessageProtos {
         output.writeBytes(1, id_.get(i));
       }
       for (int i = 0; i < position_.size(); i++) {
-        output.writeFloat(2, position_.get(i));
+        output.writeDouble(2, position_.get(i));
       }
       for (int i = 0; i < orientation_.size(); i++) {
         output.writeFloat(3, orientation_.get(i));
       }
-      for (int i = 0; i < sequence_.size(); i++) {
-        output.writeUInt32(4, sequence_.get(i));
-      }
-      for (int i = 0; i < interpolation_.size(); i++) {
-        output.writeFloat(5, interpolation_.get(i));
-      }
-      for (int i = 0; i < distances_.size(); i++) {
-        output.writeFloat(6, distances_.get(i));
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeMessage(4, anchor_);
       }
     }
 
@@ -538,7 +339,7 @@ public final class MessageProtos {
       }
       {
         int dataSize = 0;
-        dataSize = 4 * getPositionList().size();
+        dataSize = 8 * getPositionList().size();
         size += dataSize;
         size += 1 * getPositionList().size();
       }
@@ -548,26 +349,9 @@ public final class MessageProtos {
         size += dataSize;
         size += 1 * getOrientationList().size();
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < sequence_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(sequence_.get(i));
-        }
-        size += dataSize;
-        size += 1 * getSequenceList().size();
-      }
-      {
-        int dataSize = 0;
-        dataSize = 4 * getInterpolationList().size();
-        size += dataSize;
-        size += 1 * getInterpolationList().size();
-      }
-      {
-        int dataSize = 0;
-        dataSize = 4 * getDistancesList().size();
-        size += dataSize;
-        size += 1 * getDistancesList().size();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, anchor_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -666,12 +450,8 @@ public final class MessageProtos {
         bitField0_ = (bitField0_ & ~0x00000002);
         orientation_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
-        sequence_ = java.util.Collections.emptyList();
+        anchor_ = io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.getDefaultInstance();
         bitField0_ = (bitField0_ & ~0x00000008);
-        interpolation_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
-        distances_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -694,6 +474,7 @@ public final class MessageProtos {
       public io.rainbow.commonthread.protocolbuffers.MessageProtos.Device buildPartial() {
         io.rainbow.commonthread.protocolbuffers.MessageProtos.Device result = new io.rainbow.commonthread.protocolbuffers.MessageProtos.Device(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           id_ = java.util.Collections.unmodifiableList(id_);
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -709,21 +490,11 @@ public final class MessageProtos {
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.orientation_ = orientation_;
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          sequence_ = java.util.Collections.unmodifiableList(sequence_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000001;
         }
-        result.sequence_ = sequence_;
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
-          interpolation_ = java.util.Collections.unmodifiableList(interpolation_);
-          bitField0_ = (bitField0_ & ~0x00000010);
-        }
-        result.interpolation_ = interpolation_;
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
-          distances_ = java.util.Collections.unmodifiableList(distances_);
-          bitField0_ = (bitField0_ & ~0x00000020);
-        }
-        result.distances_ = distances_;
+        result.anchor_ = anchor_;
+        result.bitField0_ = to_bitField0_;
         return result;
       }
 
@@ -759,35 +530,8 @@ public final class MessageProtos {
           }
           
         }
-        if (!other.sequence_.isEmpty()) {
-          if (sequence_.isEmpty()) {
-            sequence_ = other.sequence_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-          } else {
-            ensureSequenceIsMutable();
-            sequence_.addAll(other.sequence_);
-          }
-          
-        }
-        if (!other.interpolation_.isEmpty()) {
-          if (interpolation_.isEmpty()) {
-            interpolation_ = other.interpolation_;
-            bitField0_ = (bitField0_ & ~0x00000010);
-          } else {
-            ensureInterpolationIsMutable();
-            interpolation_.addAll(other.interpolation_);
-          }
-          
-        }
-        if (!other.distances_.isEmpty()) {
-          if (distances_.isEmpty()) {
-            distances_ = other.distances_;
-            bitField0_ = (bitField0_ & ~0x00000020);
-          } else {
-            ensureDistancesIsMutable();
-            distances_.addAll(other.distances_);
-          }
-          
+        if (other.hasAnchor()) {
+          mergeAnchor(other.getAnchor());
         }
         return this;
       }
@@ -887,64 +631,64 @@ public final class MessageProtos {
         return this;
       }
 
-      // repeated float position = 2;
-      private java.util.List<java.lang.Float> position_ = java.util.Collections.emptyList();
+      // repeated double position = 2;
+      private java.util.List<java.lang.Double> position_ = java.util.Collections.emptyList();
       private void ensurePositionIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          position_ = new java.util.ArrayList<java.lang.Float>(position_);
+          position_ = new java.util.ArrayList<java.lang.Double>(position_);
           bitField0_ |= 0x00000002;
          }
       }
       /**
-       * <code>repeated float position = 2;</code>
+       * <code>repeated double position = 2;</code>
        */
-      public java.util.List<java.lang.Float>
+      public java.util.List<java.lang.Double>
           getPositionList() {
         return java.util.Collections.unmodifiableList(position_);
       }
       /**
-       * <code>repeated float position = 2;</code>
+       * <code>repeated double position = 2;</code>
        */
       public int getPositionCount() {
         return position_.size();
       }
       /**
-       * <code>repeated float position = 2;</code>
+       * <code>repeated double position = 2;</code>
        */
-      public float getPosition(int index) {
+      public double getPosition(int index) {
         return position_.get(index);
       }
       /**
-       * <code>repeated float position = 2;</code>
+       * <code>repeated double position = 2;</code>
        */
       public Builder setPosition(
-          int index, float value) {
+          int index, double value) {
         ensurePositionIsMutable();
         position_.set(index, value);
         
         return this;
       }
       /**
-       * <code>repeated float position = 2;</code>
+       * <code>repeated double position = 2;</code>
        */
-      public Builder addPosition(float value) {
+      public Builder addPosition(double value) {
         ensurePositionIsMutable();
         position_.add(value);
         
         return this;
       }
       /**
-       * <code>repeated float position = 2;</code>
+       * <code>repeated double position = 2;</code>
        */
       public Builder addAllPosition(
-          java.lang.Iterable<? extends java.lang.Float> values) {
+          java.lang.Iterable<? extends java.lang.Double> values) {
         ensurePositionIsMutable();
         super.addAll(values, position_);
         
         return this;
       }
       /**
-       * <code>repeated float position = 2;</code>
+       * <code>repeated double position = 2;</code>
        */
       public Builder clearPosition() {
         position_ = java.util.Collections.emptyList();
@@ -1019,35 +763,810 @@ public final class MessageProtos {
         return this;
       }
 
-      // repeated uint32 sequence = 4;
-      private java.util.List<java.lang.Integer> sequence_ = java.util.Collections.emptyList();
-      private void ensureSequenceIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          sequence_ = new java.util.ArrayList<java.lang.Integer>(sequence_);
-          bitField0_ |= 0x00000008;
+      // optional .Device anchor = 4;
+      private io.rainbow.commonthread.protocolbuffers.MessageProtos.Device anchor_ = io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.getDefaultInstance();
+      /**
+       * <code>optional .Device anchor = 4;</code>
+       */
+      public boolean hasAnchor() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional .Device anchor = 4;</code>
+       */
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.Device getAnchor() {
+        return anchor_;
+      }
+      /**
+       * <code>optional .Device anchor = 4;</code>
+       */
+      public Builder setAnchor(io.rainbow.commonthread.protocolbuffers.MessageProtos.Device value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        anchor_ = value;
+
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .Device anchor = 4;</code>
+       */
+      public Builder setAnchor(
+          io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.Builder builderForValue) {
+        anchor_ = builderForValue.build();
+
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .Device anchor = 4;</code>
+       */
+      public Builder mergeAnchor(io.rainbow.commonthread.protocolbuffers.MessageProtos.Device value) {
+        if (((bitField0_ & 0x00000008) == 0x00000008) &&
+            anchor_ != io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.getDefaultInstance()) {
+          anchor_ =
+            io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.newBuilder(anchor_).mergeFrom(value).buildPartial();
+        } else {
+          anchor_ = value;
+        }
+
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .Device anchor = 4;</code>
+       */
+      public Builder clearAnchor() {
+        anchor_ = io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.getDefaultInstance();
+
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:Device)
+    }
+
+    static {
+      defaultInstance = new Device(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:Device)
+  }
+
+  public interface DeviceSequenceOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+
+    // repeated bytes id = 1;
+    /**
+     * <code>repeated bytes id = 1;</code>
+     */
+    java.util.List<com.google.protobuf.ByteString> getIdList();
+    /**
+     * <code>repeated bytes id = 1;</code>
+     */
+    int getIdCount();
+    /**
+     * <code>repeated bytes id = 1;</code>
+     */
+    com.google.protobuf.ByteString getId(int index);
+
+    // repeated uint32 sequence = 2;
+    /**
+     * <code>repeated uint32 sequence = 2;</code>
+     */
+    java.util.List<java.lang.Integer> getSequenceList();
+    /**
+     * <code>repeated uint32 sequence = 2;</code>
+     */
+    int getSequenceCount();
+    /**
+     * <code>repeated uint32 sequence = 2;</code>
+     */
+    int getSequence(int index);
+
+    // repeated float interpolation = 3;
+    /**
+     * <code>repeated float interpolation = 3;</code>
+     *
+     * <pre>
+     * corner and control points from previous to next 
+     * </pre>
+     */
+    java.util.List<java.lang.Float> getInterpolationList();
+    /**
+     * <code>repeated float interpolation = 3;</code>
+     *
+     * <pre>
+     * corner and control points from previous to next 
+     * </pre>
+     */
+    int getInterpolationCount();
+    /**
+     * <code>repeated float interpolation = 3;</code>
+     *
+     * <pre>
+     * corner and control points from previous to next 
+     * </pre>
+     */
+    float getInterpolation(int index);
+
+    // repeated float distances = 4;
+    /**
+     * <code>repeated float distances = 4;</code>
+     *
+     * <pre>
+     * spline distances from previous to next (approximate) 
+     * </pre>
+     */
+    java.util.List<java.lang.Float> getDistancesList();
+    /**
+     * <code>repeated float distances = 4;</code>
+     *
+     * <pre>
+     * spline distances from previous to next (approximate) 
+     * </pre>
+     */
+    int getDistancesCount();
+    /**
+     * <code>repeated float distances = 4;</code>
+     *
+     * <pre>
+     * spline distances from previous to next (approximate) 
+     * </pre>
+     */
+    float getDistances(int index);
+  }
+  /**
+   * Protobuf type {@code DeviceSequence}
+   */
+  public static final class DeviceSequence extends
+      com.google.protobuf.GeneratedMessageLite
+      implements DeviceSequenceOrBuilder {
+    // Use DeviceSequence.newBuilder() to construct.
+    private DeviceSequence(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+
+    }
+    private DeviceSequence(boolean noInit) {}
+
+    private static final DeviceSequence defaultInstance;
+    public static DeviceSequence getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public DeviceSequence getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private DeviceSequence(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                id_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              id_.add(input.readBytes());
+              break;
+            }
+            case 16: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                sequence_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              sequence_.add(input.readUInt32());
+              break;
+            }
+            case 18: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
+                sequence_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                sequence_.add(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 29: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                interpolation_ = new java.util.ArrayList<java.lang.Float>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              interpolation_.add(input.readFloat());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004) && input.getBytesUntilLimit() > 0) {
+                interpolation_ = new java.util.ArrayList<java.lang.Float>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                interpolation_.add(input.readFloat());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 37: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                distances_ = new java.util.ArrayList<java.lang.Float>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              distances_.add(input.readFloat());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
+                distances_ = new java.util.ArrayList<java.lang.Float>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                distances_.add(input.readFloat());
+              }
+              input.popLimit(limit);
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          id_ = java.util.Collections.unmodifiableList(id_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          sequence_ = java.util.Collections.unmodifiableList(sequence_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          interpolation_ = java.util.Collections.unmodifiableList(interpolation_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          distances_ = java.util.Collections.unmodifiableList(distances_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<DeviceSequence> PARSER =
+        new com.google.protobuf.AbstractParser<DeviceSequence>() {
+      public DeviceSequence parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeviceSequence(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeviceSequence> getParserForType() {
+      return PARSER;
+    }
+
+    // repeated bytes id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private java.util.List<com.google.protobuf.ByteString> id_;
+    /**
+     * <code>repeated bytes id = 1;</code>
+     */
+    public java.util.List<com.google.protobuf.ByteString>
+        getIdList() {
+      return id_;
+    }
+    /**
+     * <code>repeated bytes id = 1;</code>
+     */
+    public int getIdCount() {
+      return id_.size();
+    }
+    /**
+     * <code>repeated bytes id = 1;</code>
+     */
+    public com.google.protobuf.ByteString getId(int index) {
+      return id_.get(index);
+    }
+
+    // repeated uint32 sequence = 2;
+    public static final int SEQUENCE_FIELD_NUMBER = 2;
+    private java.util.List<java.lang.Integer> sequence_;
+    /**
+     * <code>repeated uint32 sequence = 2;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getSequenceList() {
+      return sequence_;
+    }
+    /**
+     * <code>repeated uint32 sequence = 2;</code>
+     */
+    public int getSequenceCount() {
+      return sequence_.size();
+    }
+    /**
+     * <code>repeated uint32 sequence = 2;</code>
+     */
+    public int getSequence(int index) {
+      return sequence_.get(index);
+    }
+
+    // repeated float interpolation = 3;
+    public static final int INTERPOLATION_FIELD_NUMBER = 3;
+    private java.util.List<java.lang.Float> interpolation_;
+    /**
+     * <code>repeated float interpolation = 3;</code>
+     *
+     * <pre>
+     * corner and control points from previous to next 
+     * </pre>
+     */
+    public java.util.List<java.lang.Float>
+        getInterpolationList() {
+      return interpolation_;
+    }
+    /**
+     * <code>repeated float interpolation = 3;</code>
+     *
+     * <pre>
+     * corner and control points from previous to next 
+     * </pre>
+     */
+    public int getInterpolationCount() {
+      return interpolation_.size();
+    }
+    /**
+     * <code>repeated float interpolation = 3;</code>
+     *
+     * <pre>
+     * corner and control points from previous to next 
+     * </pre>
+     */
+    public float getInterpolation(int index) {
+      return interpolation_.get(index);
+    }
+
+    // repeated float distances = 4;
+    public static final int DISTANCES_FIELD_NUMBER = 4;
+    private java.util.List<java.lang.Float> distances_;
+    /**
+     * <code>repeated float distances = 4;</code>
+     *
+     * <pre>
+     * spline distances from previous to next (approximate) 
+     * </pre>
+     */
+    public java.util.List<java.lang.Float>
+        getDistancesList() {
+      return distances_;
+    }
+    /**
+     * <code>repeated float distances = 4;</code>
+     *
+     * <pre>
+     * spline distances from previous to next (approximate) 
+     * </pre>
+     */
+    public int getDistancesCount() {
+      return distances_.size();
+    }
+    /**
+     * <code>repeated float distances = 4;</code>
+     *
+     * <pre>
+     * spline distances from previous to next (approximate) 
+     * </pre>
+     */
+    public float getDistances(int index) {
+      return distances_.get(index);
+    }
+
+    private void initFields() {
+      id_ = java.util.Collections.emptyList();
+      sequence_ = java.util.Collections.emptyList();
+      interpolation_ = java.util.Collections.emptyList();
+      distances_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < id_.size(); i++) {
+        output.writeBytes(1, id_.get(i));
+      }
+      for (int i = 0; i < sequence_.size(); i++) {
+        output.writeUInt32(2, sequence_.get(i));
+      }
+      for (int i = 0; i < interpolation_.size(); i++) {
+        output.writeFloat(3, interpolation_.get(i));
+      }
+      for (int i = 0; i < distances_.size(); i++) {
+        output.writeFloat(4, distances_.get(i));
+      }
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < id_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(id_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getIdList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < sequence_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(sequence_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getSequenceList().size();
+      }
+      {
+        int dataSize = 0;
+        dataSize = 4 * getInterpolationList().size();
+        size += dataSize;
+        size += 1 * getInterpolationList().size();
+      }
+      {
+        int dataSize = 0;
+        dataSize = 4 * getDistancesList().size();
+        size += dataSize;
+        size += 1 * getDistancesList().size();
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code DeviceSequence}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence, Builder>
+        implements io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequenceOrBuilder {
+      // Construct using io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        id_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        sequence_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        interpolation_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        distances_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence getDefaultInstanceForType() {
+        return io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence.getDefaultInstance();
+      }
+
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence build() {
+        io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence buildPartial() {
+        io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence result = new io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          id_ = java.util.Collections.unmodifiableList(id_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.id_ = id_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          sequence_ = java.util.Collections.unmodifiableList(sequence_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.sequence_ = sequence_;
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          interpolation_ = java.util.Collections.unmodifiableList(interpolation_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.interpolation_ = interpolation_;
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          distances_ = java.util.Collections.unmodifiableList(distances_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.distances_ = distances_;
+        return result;
+      }
+
+      public Builder mergeFrom(io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence other) {
+        if (other == io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence.getDefaultInstance()) return this;
+        if (!other.id_.isEmpty()) {
+          if (id_.isEmpty()) {
+            id_ = other.id_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureIdIsMutable();
+            id_.addAll(other.id_);
+          }
+          
+        }
+        if (!other.sequence_.isEmpty()) {
+          if (sequence_.isEmpty()) {
+            sequence_ = other.sequence_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureSequenceIsMutable();
+            sequence_.addAll(other.sequence_);
+          }
+          
+        }
+        if (!other.interpolation_.isEmpty()) {
+          if (interpolation_.isEmpty()) {
+            interpolation_ = other.interpolation_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureInterpolationIsMutable();
+            interpolation_.addAll(other.interpolation_);
+          }
+          
+        }
+        if (!other.distances_.isEmpty()) {
+          if (distances_.isEmpty()) {
+            distances_ = other.distances_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureDistancesIsMutable();
+            distances_.addAll(other.distances_);
+          }
+          
+        }
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // repeated bytes id = 1;
+      private java.util.List<com.google.protobuf.ByteString> id_ = java.util.Collections.emptyList();
+      private void ensureIdIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          id_ = new java.util.ArrayList<com.google.protobuf.ByteString>(id_);
+          bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 sequence = 4;</code>
+       * <code>repeated bytes id = 1;</code>
+       */
+      public java.util.List<com.google.protobuf.ByteString>
+          getIdList() {
+        return java.util.Collections.unmodifiableList(id_);
+      }
+      /**
+       * <code>repeated bytes id = 1;</code>
+       */
+      public int getIdCount() {
+        return id_.size();
+      }
+      /**
+       * <code>repeated bytes id = 1;</code>
+       */
+      public com.google.protobuf.ByteString getId(int index) {
+        return id_.get(index);
+      }
+      /**
+       * <code>repeated bytes id = 1;</code>
+       */
+      public Builder setId(
+          int index, com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIdIsMutable();
+        id_.set(index, value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated bytes id = 1;</code>
+       */
+      public Builder addId(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIdIsMutable();
+        id_.add(value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated bytes id = 1;</code>
+       */
+      public Builder addAllId(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureIdIsMutable();
+        super.addAll(values, id_);
+        
+        return this;
+      }
+      /**
+       * <code>repeated bytes id = 1;</code>
+       */
+      public Builder clearId() {
+        id_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        
+        return this;
+      }
+
+      // repeated uint32 sequence = 2;
+      private java.util.List<java.lang.Integer> sequence_ = java.util.Collections.emptyList();
+      private void ensureSequenceIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          sequence_ = new java.util.ArrayList<java.lang.Integer>(sequence_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 sequence = 2;</code>
        */
       public java.util.List<java.lang.Integer>
           getSequenceList() {
         return java.util.Collections.unmodifiableList(sequence_);
       }
       /**
-       * <code>repeated uint32 sequence = 4;</code>
+       * <code>repeated uint32 sequence = 2;</code>
        */
       public int getSequenceCount() {
         return sequence_.size();
       }
       /**
-       * <code>repeated uint32 sequence = 4;</code>
+       * <code>repeated uint32 sequence = 2;</code>
        */
       public int getSequence(int index) {
         return sequence_.get(index);
       }
       /**
-       * <code>repeated uint32 sequence = 4;</code>
+       * <code>repeated uint32 sequence = 2;</code>
        */
       public Builder setSequence(
           int index, int value) {
@@ -1057,7 +1576,7 @@ public final class MessageProtos {
         return this;
       }
       /**
-       * <code>repeated uint32 sequence = 4;</code>
+       * <code>repeated uint32 sequence = 2;</code>
        */
       public Builder addSequence(int value) {
         ensureSequenceIsMutable();
@@ -1066,7 +1585,7 @@ public final class MessageProtos {
         return this;
       }
       /**
-       * <code>repeated uint32 sequence = 4;</code>
+       * <code>repeated uint32 sequence = 2;</code>
        */
       public Builder addAllSequence(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -1076,25 +1595,25 @@ public final class MessageProtos {
         return this;
       }
       /**
-       * <code>repeated uint32 sequence = 4;</code>
+       * <code>repeated uint32 sequence = 2;</code>
        */
       public Builder clearSequence() {
         sequence_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         
         return this;
       }
 
-      // repeated float interpolation = 5;
+      // repeated float interpolation = 3;
       private java.util.List<java.lang.Float> interpolation_ = java.util.Collections.emptyList();
       private void ensureInterpolationIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
           interpolation_ = new java.util.ArrayList<java.lang.Float>(interpolation_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000004;
          }
       }
       /**
-       * <code>repeated float interpolation = 5;</code>
+       * <code>repeated float interpolation = 3;</code>
        *
        * <pre>
        * corner and control points from previous to next 
@@ -1105,7 +1624,7 @@ public final class MessageProtos {
         return java.util.Collections.unmodifiableList(interpolation_);
       }
       /**
-       * <code>repeated float interpolation = 5;</code>
+       * <code>repeated float interpolation = 3;</code>
        *
        * <pre>
        * corner and control points from previous to next 
@@ -1115,7 +1634,7 @@ public final class MessageProtos {
         return interpolation_.size();
       }
       /**
-       * <code>repeated float interpolation = 5;</code>
+       * <code>repeated float interpolation = 3;</code>
        *
        * <pre>
        * corner and control points from previous to next 
@@ -1125,7 +1644,7 @@ public final class MessageProtos {
         return interpolation_.get(index);
       }
       /**
-       * <code>repeated float interpolation = 5;</code>
+       * <code>repeated float interpolation = 3;</code>
        *
        * <pre>
        * corner and control points from previous to next 
@@ -1139,7 +1658,7 @@ public final class MessageProtos {
         return this;
       }
       /**
-       * <code>repeated float interpolation = 5;</code>
+       * <code>repeated float interpolation = 3;</code>
        *
        * <pre>
        * corner and control points from previous to next 
@@ -1152,7 +1671,7 @@ public final class MessageProtos {
         return this;
       }
       /**
-       * <code>repeated float interpolation = 5;</code>
+       * <code>repeated float interpolation = 3;</code>
        *
        * <pre>
        * corner and control points from previous to next 
@@ -1166,7 +1685,7 @@ public final class MessageProtos {
         return this;
       }
       /**
-       * <code>repeated float interpolation = 5;</code>
+       * <code>repeated float interpolation = 3;</code>
        *
        * <pre>
        * corner and control points from previous to next 
@@ -1174,21 +1693,21 @@ public final class MessageProtos {
        */
       public Builder clearInterpolation() {
         interpolation_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000004);
         
         return this;
       }
 
-      // repeated float distances = 6;
+      // repeated float distances = 4;
       private java.util.List<java.lang.Float> distances_ = java.util.Collections.emptyList();
       private void ensureDistancesIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           distances_ = new java.util.ArrayList<java.lang.Float>(distances_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000008;
          }
       }
       /**
-       * <code>repeated float distances = 6;</code>
+       * <code>repeated float distances = 4;</code>
        *
        * <pre>
        * spline distances from previous to next (approximate) 
@@ -1199,7 +1718,7 @@ public final class MessageProtos {
         return java.util.Collections.unmodifiableList(distances_);
       }
       /**
-       * <code>repeated float distances = 6;</code>
+       * <code>repeated float distances = 4;</code>
        *
        * <pre>
        * spline distances from previous to next (approximate) 
@@ -1209,7 +1728,7 @@ public final class MessageProtos {
         return distances_.size();
       }
       /**
-       * <code>repeated float distances = 6;</code>
+       * <code>repeated float distances = 4;</code>
        *
        * <pre>
        * spline distances from previous to next (approximate) 
@@ -1219,7 +1738,7 @@ public final class MessageProtos {
         return distances_.get(index);
       }
       /**
-       * <code>repeated float distances = 6;</code>
+       * <code>repeated float distances = 4;</code>
        *
        * <pre>
        * spline distances from previous to next (approximate) 
@@ -1233,7 +1752,7 @@ public final class MessageProtos {
         return this;
       }
       /**
-       * <code>repeated float distances = 6;</code>
+       * <code>repeated float distances = 4;</code>
        *
        * <pre>
        * spline distances from previous to next (approximate) 
@@ -1246,7 +1765,7 @@ public final class MessageProtos {
         return this;
       }
       /**
-       * <code>repeated float distances = 6;</code>
+       * <code>repeated float distances = 4;</code>
        *
        * <pre>
        * spline distances from previous to next (approximate) 
@@ -1260,7 +1779,7 @@ public final class MessageProtos {
         return this;
       }
       /**
-       * <code>repeated float distances = 6;</code>
+       * <code>repeated float distances = 4;</code>
        *
        * <pre>
        * spline distances from previous to next (approximate) 
@@ -1268,20 +1787,20 @@ public final class MessageProtos {
        */
       public Builder clearDistances() {
         distances_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000008);
         
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:Device)
+      // @@protoc_insertion_point(builder_scope:DeviceSequence)
     }
 
     static {
-      defaultInstance = new Device(true);
+      defaultInstance = new DeviceSequence(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:Device)
+    // @@protoc_insertion_point(class_scope:DeviceSequence)
   }
 
   public interface MomentOrBuilder
@@ -1324,26 +1843,6 @@ public final class MessageProtos {
      * <code>repeated bytes data = 3;</code>
      */
     com.google.protobuf.ByteString getData(int index);
-
-    // optional double sequence = 4;
-    /**
-     * <code>optional double sequence = 4;</code>
-     */
-    boolean hasSequence();
-    /**
-     * <code>optional double sequence = 4;</code>
-     */
-    double getSequence();
-
-    // optional bool delete = 5;
-    /**
-     * <code>optional bool delete = 5;</code>
-     */
-    boolean hasDelete();
-    /**
-     * <code>optional bool delete = 5;</code>
-     */
-    boolean getDelete();
   }
   /**
    * Protobuf type {@code Moment}
@@ -1407,16 +1906,6 @@ public final class MessageProtos {
                 mutable_bitField0_ |= 0x00000004;
               }
               data_.add(input.readBytes());
-              break;
-            }
-            case 33: {
-              bitField0_ |= 0x00000002;
-              sequence_ = input.readDouble();
-              break;
-            }
-            case 40: {
-              bitField0_ |= 0x00000004;
-              delete_ = input.readBool();
               break;
             }
           }
@@ -1514,44 +2003,10 @@ public final class MessageProtos {
       return data_.get(index);
     }
 
-    // optional double sequence = 4;
-    public static final int SEQUENCE_FIELD_NUMBER = 4;
-    private double sequence_;
-    /**
-     * <code>optional double sequence = 4;</code>
-     */
-    public boolean hasSequence() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional double sequence = 4;</code>
-     */
-    public double getSequence() {
-      return sequence_;
-    }
-
-    // optional bool delete = 5;
-    public static final int DELETE_FIELD_NUMBER = 5;
-    private boolean delete_;
-    /**
-     * <code>optional bool delete = 5;</code>
-     */
-    public boolean hasDelete() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional bool delete = 5;</code>
-     */
-    public boolean getDelete() {
-      return delete_;
-    }
-
     private void initFields() {
       id_ = java.util.Collections.emptyList();
       creationTime_ = 0L;
       data_ = java.util.Collections.emptyList();
-      sequence_ = 0D;
-      delete_ = false;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -1573,12 +2028,6 @@ public final class MessageProtos {
       }
       for (int i = 0; i < data_.size(); i++) {
         output.writeBytes(3, data_.get(i));
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeDouble(4, sequence_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBool(5, delete_);
       }
     }
 
@@ -1609,14 +2058,6 @@ public final class MessageProtos {
         }
         size += dataSize;
         size += 1 * getDataList().size();
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(4, sequence_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, delete_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -1715,10 +2156,6 @@ public final class MessageProtos {
         bitField0_ = (bitField0_ & ~0x00000002);
         data_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
-        sequence_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        delete_ = false;
-        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1756,14 +2193,6 @@ public final class MessageProtos {
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.data_ = data_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.sequence_ = sequence_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.delete_ = delete_;
         result.bitField0_ = to_bitField0_;
         return result;
       }
@@ -1792,12 +2221,6 @@ public final class MessageProtos {
             data_.addAll(other.data_);
           }
           
-        }
-        if (other.hasSequence()) {
-          setSequence(other.getSequence());
-        }
-        if (other.hasDelete()) {
-          setDelete(other.getDelete());
         }
         return this;
       }
@@ -2002,72 +2425,6 @@ public final class MessageProtos {
         return this;
       }
 
-      // optional double sequence = 4;
-      private double sequence_ ;
-      /**
-       * <code>optional double sequence = 4;</code>
-       */
-      public boolean hasSequence() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional double sequence = 4;</code>
-       */
-      public double getSequence() {
-        return sequence_;
-      }
-      /**
-       * <code>optional double sequence = 4;</code>
-       */
-      public Builder setSequence(double value) {
-        bitField0_ |= 0x00000008;
-        sequence_ = value;
-        
-        return this;
-      }
-      /**
-       * <code>optional double sequence = 4;</code>
-       */
-      public Builder clearSequence() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        sequence_ = 0D;
-        
-        return this;
-      }
-
-      // optional bool delete = 5;
-      private boolean delete_ ;
-      /**
-       * <code>optional bool delete = 5;</code>
-       */
-      public boolean hasDelete() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>optional bool delete = 5;</code>
-       */
-      public boolean getDelete() {
-        return delete_;
-      }
-      /**
-       * <code>optional bool delete = 5;</code>
-       */
-      public Builder setDelete(boolean value) {
-        bitField0_ |= 0x00000010;
-        delete_ = value;
-        
-        return this;
-      }
-      /**
-       * <code>optional bool delete = 5;</code>
-       */
-      public Builder clearDelete() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        delete_ = false;
-        
-        return this;
-      }
-
       // @@protoc_insertion_point(builder_scope:Moment)
     }
 
@@ -2079,36 +2436,638 @@ public final class MessageProtos {
     // @@protoc_insertion_point(class_scope:Moment)
   }
 
+  public interface MomentSequenceOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+
+    // repeated bytes id = 1;
+    /**
+     * <code>repeated bytes id = 1;</code>
+     */
+    java.util.List<com.google.protobuf.ByteString> getIdList();
+    /**
+     * <code>repeated bytes id = 1;</code>
+     */
+    int getIdCount();
+    /**
+     * <code>repeated bytes id = 1;</code>
+     */
+    com.google.protobuf.ByteString getId(int index);
+
+    // optional double sequence = 2;
+    /**
+     * <code>optional double sequence = 2;</code>
+     */
+    boolean hasSequence();
+    /**
+     * <code>optional double sequence = 2;</code>
+     */
+    double getSequence();
+
+    // optional bool deleted = 3;
+    /**
+     * <code>optional bool deleted = 3;</code>
+     */
+    boolean hasDeleted();
+    /**
+     * <code>optional bool deleted = 3;</code>
+     */
+    boolean getDeleted();
+  }
+  /**
+   * Protobuf type {@code MomentSequence}
+   */
+  public static final class MomentSequence extends
+      com.google.protobuf.GeneratedMessageLite
+      implements MomentSequenceOrBuilder {
+    // Use MomentSequence.newBuilder() to construct.
+    private MomentSequence(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+
+    }
+    private MomentSequence(boolean noInit) {}
+
+    private static final MomentSequence defaultInstance;
+    public static MomentSequence getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public MomentSequence getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private MomentSequence(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                id_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              id_.add(input.readBytes());
+              break;
+            }
+            case 17: {
+              bitField0_ |= 0x00000001;
+              sequence_ = input.readDouble();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000002;
+              deleted_ = input.readBool();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          id_ = java.util.Collections.unmodifiableList(id_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<MomentSequence> PARSER =
+        new com.google.protobuf.AbstractParser<MomentSequence>() {
+      public MomentSequence parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MomentSequence(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MomentSequence> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // repeated bytes id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private java.util.List<com.google.protobuf.ByteString> id_;
+    /**
+     * <code>repeated bytes id = 1;</code>
+     */
+    public java.util.List<com.google.protobuf.ByteString>
+        getIdList() {
+      return id_;
+    }
+    /**
+     * <code>repeated bytes id = 1;</code>
+     */
+    public int getIdCount() {
+      return id_.size();
+    }
+    /**
+     * <code>repeated bytes id = 1;</code>
+     */
+    public com.google.protobuf.ByteString getId(int index) {
+      return id_.get(index);
+    }
+
+    // optional double sequence = 2;
+    public static final int SEQUENCE_FIELD_NUMBER = 2;
+    private double sequence_;
+    /**
+     * <code>optional double sequence = 2;</code>
+     */
+    public boolean hasSequence() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional double sequence = 2;</code>
+     */
+    public double getSequence() {
+      return sequence_;
+    }
+
+    // optional bool deleted = 3;
+    public static final int DELETED_FIELD_NUMBER = 3;
+    private boolean deleted_;
+    /**
+     * <code>optional bool deleted = 3;</code>
+     */
+    public boolean hasDeleted() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional bool deleted = 3;</code>
+     */
+    public boolean getDeleted() {
+      return deleted_;
+    }
+
+    private void initFields() {
+      id_ = java.util.Collections.emptyList();
+      sequence_ = 0D;
+      deleted_ = false;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < id_.size(); i++) {
+        output.writeBytes(1, id_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeDouble(2, sequence_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBool(3, deleted_);
+      }
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < id_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(id_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getIdList().size();
+      }
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, sequence_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, deleted_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code MomentSequence}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence, Builder>
+        implements io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequenceOrBuilder {
+      // Construct using io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        id_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        sequence_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        deleted_ = false;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence getDefaultInstanceForType() {
+        return io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence.getDefaultInstance();
+      }
+
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence build() {
+        io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence buildPartial() {
+        io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence result = new io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          id_ = java.util.Collections.unmodifiableList(id_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.sequence_ = sequence_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.deleted_ = deleted_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+
+      public Builder mergeFrom(io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence other) {
+        if (other == io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence.getDefaultInstance()) return this;
+        if (!other.id_.isEmpty()) {
+          if (id_.isEmpty()) {
+            id_ = other.id_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureIdIsMutable();
+            id_.addAll(other.id_);
+          }
+          
+        }
+        if (other.hasSequence()) {
+          setSequence(other.getSequence());
+        }
+        if (other.hasDeleted()) {
+          setDeleted(other.getDeleted());
+        }
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // repeated bytes id = 1;
+      private java.util.List<com.google.protobuf.ByteString> id_ = java.util.Collections.emptyList();
+      private void ensureIdIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          id_ = new java.util.ArrayList<com.google.protobuf.ByteString>(id_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated bytes id = 1;</code>
+       */
+      public java.util.List<com.google.protobuf.ByteString>
+          getIdList() {
+        return java.util.Collections.unmodifiableList(id_);
+      }
+      /**
+       * <code>repeated bytes id = 1;</code>
+       */
+      public int getIdCount() {
+        return id_.size();
+      }
+      /**
+       * <code>repeated bytes id = 1;</code>
+       */
+      public com.google.protobuf.ByteString getId(int index) {
+        return id_.get(index);
+      }
+      /**
+       * <code>repeated bytes id = 1;</code>
+       */
+      public Builder setId(
+          int index, com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIdIsMutable();
+        id_.set(index, value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated bytes id = 1;</code>
+       */
+      public Builder addId(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIdIsMutable();
+        id_.add(value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated bytes id = 1;</code>
+       */
+      public Builder addAllId(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureIdIsMutable();
+        super.addAll(values, id_);
+        
+        return this;
+      }
+      /**
+       * <code>repeated bytes id = 1;</code>
+       */
+      public Builder clearId() {
+        id_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        
+        return this;
+      }
+
+      // optional double sequence = 2;
+      private double sequence_ ;
+      /**
+       * <code>optional double sequence = 2;</code>
+       */
+      public boolean hasSequence() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional double sequence = 2;</code>
+       */
+      public double getSequence() {
+        return sequence_;
+      }
+      /**
+       * <code>optional double sequence = 2;</code>
+       */
+      public Builder setSequence(double value) {
+        bitField0_ |= 0x00000002;
+        sequence_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional double sequence = 2;</code>
+       */
+      public Builder clearSequence() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        sequence_ = 0D;
+        
+        return this;
+      }
+
+      // optional bool deleted = 3;
+      private boolean deleted_ ;
+      /**
+       * <code>optional bool deleted = 3;</code>
+       */
+      public boolean hasDeleted() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional bool deleted = 3;</code>
+       */
+      public boolean getDeleted() {
+        return deleted_;
+      }
+      /**
+       * <code>optional bool deleted = 3;</code>
+       */
+      public Builder setDeleted(boolean value) {
+        bitField0_ |= 0x00000004;
+        deleted_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional bool deleted = 3;</code>
+       */
+      public Builder clearDeleted() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        deleted_ = false;
+        
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:MomentSequence)
+    }
+
+    static {
+      defaultInstance = new MomentSequence(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:MomentSequence)
+  }
+
   public interface SyncOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
 
-    // repeated bytes ids = 1;
+    // optional .Device device = 1;
     /**
-     * <code>repeated bytes ids = 1;</code>
+     * <code>optional .Device device = 1;</code>
      */
-    java.util.List<com.google.protobuf.ByteString> getIdsList();
+    boolean hasDevice();
     /**
-     * <code>repeated bytes ids = 1;</code>
+     * <code>optional .Device device = 1;</code>
      */
-    int getIdsCount();
-    /**
-     * <code>repeated bytes ids = 1;</code>
-     */
-    com.google.protobuf.ByteString getIds(int index);
+    io.rainbow.commonthread.protocolbuffers.MessageProtos.Device getDevice();
 
-    // repeated uint32 lengths = 2;
+    // repeated bytes device_ids = 2;
     /**
-     * <code>repeated uint32 lengths = 2;</code>
+     * <code>repeated bytes device_ids = 2;</code>
      */
-    java.util.List<java.lang.Integer> getLengthsList();
+    java.util.List<com.google.protobuf.ByteString> getDeviceIdsList();
     /**
-     * <code>repeated uint32 lengths = 2;</code>
+     * <code>repeated bytes device_ids = 2;</code>
      */
-    int getLengthsCount();
+    int getDeviceIdsCount();
     /**
-     * <code>repeated uint32 lengths = 2;</code>
+     * <code>repeated bytes device_ids = 2;</code>
      */
-    int getLengths(int index);
+    com.google.protobuf.ByteString getDeviceIds(int index);
+
+    // repeated uint32 device_id_lengths = 3;
+    /**
+     * <code>repeated uint32 device_id_lengths = 3;</code>
+     */
+    java.util.List<java.lang.Integer> getDeviceIdLengthsList();
+    /**
+     * <code>repeated uint32 device_id_lengths = 3;</code>
+     */
+    int getDeviceIdLengthsCount();
+    /**
+     * <code>repeated uint32 device_id_lengths = 3;</code>
+     */
+    int getDeviceIdLengths(int index);
+
+    // repeated bytes moment_ids = 4;
+    /**
+     * <code>repeated bytes moment_ids = 4;</code>
+     */
+    java.util.List<com.google.protobuf.ByteString> getMomentIdsList();
+    /**
+     * <code>repeated bytes moment_ids = 4;</code>
+     */
+    int getMomentIdsCount();
+    /**
+     * <code>repeated bytes moment_ids = 4;</code>
+     */
+    com.google.protobuf.ByteString getMomentIds(int index);
+
+    // repeated uint32 moment_id_lengths = 5;
+    /**
+     * <code>repeated uint32 moment_id_lengths = 5;</code>
+     */
+    java.util.List<java.lang.Integer> getMomentIdLengthsList();
+    /**
+     * <code>repeated uint32 moment_id_lengths = 5;</code>
+     */
+    int getMomentIdLengthsCount();
+    /**
+     * <code>repeated uint32 moment_id_lengths = 5;</code>
+     */
+    int getMomentIdLengths(int index);
   }
   /**
    * Protobuf type {@code Sync}
@@ -2154,30 +3113,72 @@ public final class MessageProtos {
               break;
             }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                ids_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
-                mutable_bitField0_ |= 0x00000001;
+              io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = device_.toBuilder();
               }
-              ids_.add(input.readBytes());
-              break;
-            }
-            case 16: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                lengths_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
+              device_ = input.readMessage(io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(device_);
+                device_ = subBuilder.buildPartial();
               }
-              lengths_.add(input.readUInt32());
+              bitField0_ |= 0x00000001;
               break;
             }
             case 18: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
-                lengths_ = new java.util.ArrayList<java.lang.Integer>();
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                deviceIds_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
                 mutable_bitField0_ |= 0x00000002;
               }
+              deviceIds_.add(input.readBytes());
+              break;
+            }
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                deviceIdLengths_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              deviceIdLengths_.add(input.readUInt32());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004) && input.getBytesUntilLimit() > 0) {
+                deviceIdLengths_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000004;
+              }
               while (input.getBytesUntilLimit() > 0) {
-                lengths_.add(input.readUInt32());
+                deviceIdLengths_.add(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                momentIds_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              momentIds_.add(input.readBytes());
+              break;
+            }
+            case 40: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                momentIdLengths_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              momentIdLengths_.add(input.readUInt32());
+              break;
+            }
+            case 42: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
+                momentIdLengths_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                momentIdLengths_.add(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -2190,11 +3191,17 @@ public final class MessageProtos {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          ids_ = java.util.Collections.unmodifiableList(ids_);
-        }
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          lengths_ = java.util.Collections.unmodifiableList(lengths_);
+          deviceIds_ = java.util.Collections.unmodifiableList(deviceIds_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          deviceIdLengths_ = java.util.Collections.unmodifiableList(deviceIdLengths_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          momentIds_ = java.util.Collections.unmodifiableList(momentIds_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          momentIdLengths_ = java.util.Collections.unmodifiableList(momentIdLengths_);
         }
         makeExtensionsImmutable();
       }
@@ -2214,55 +3221,121 @@ public final class MessageProtos {
       return PARSER;
     }
 
-    // repeated bytes ids = 1;
-    public static final int IDS_FIELD_NUMBER = 1;
-    private java.util.List<com.google.protobuf.ByteString> ids_;
+    private int bitField0_;
+    // optional .Device device = 1;
+    public static final int DEVICE_FIELD_NUMBER = 1;
+    private io.rainbow.commonthread.protocolbuffers.MessageProtos.Device device_;
     /**
-     * <code>repeated bytes ids = 1;</code>
+     * <code>optional .Device device = 1;</code>
      */
-    public java.util.List<com.google.protobuf.ByteString>
-        getIdsList() {
-      return ids_;
+    public boolean hasDevice() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>repeated bytes ids = 1;</code>
+     * <code>optional .Device device = 1;</code>
      */
-    public int getIdsCount() {
-      return ids_.size();
-    }
-    /**
-     * <code>repeated bytes ids = 1;</code>
-     */
-    public com.google.protobuf.ByteString getIds(int index) {
-      return ids_.get(index);
+    public io.rainbow.commonthread.protocolbuffers.MessageProtos.Device getDevice() {
+      return device_;
     }
 
-    // repeated uint32 lengths = 2;
-    public static final int LENGTHS_FIELD_NUMBER = 2;
-    private java.util.List<java.lang.Integer> lengths_;
+    // repeated bytes device_ids = 2;
+    public static final int DEVICE_IDS_FIELD_NUMBER = 2;
+    private java.util.List<com.google.protobuf.ByteString> deviceIds_;
     /**
-     * <code>repeated uint32 lengths = 2;</code>
+     * <code>repeated bytes device_ids = 2;</code>
+     */
+    public java.util.List<com.google.protobuf.ByteString>
+        getDeviceIdsList() {
+      return deviceIds_;
+    }
+    /**
+     * <code>repeated bytes device_ids = 2;</code>
+     */
+    public int getDeviceIdsCount() {
+      return deviceIds_.size();
+    }
+    /**
+     * <code>repeated bytes device_ids = 2;</code>
+     */
+    public com.google.protobuf.ByteString getDeviceIds(int index) {
+      return deviceIds_.get(index);
+    }
+
+    // repeated uint32 device_id_lengths = 3;
+    public static final int DEVICE_ID_LENGTHS_FIELD_NUMBER = 3;
+    private java.util.List<java.lang.Integer> deviceIdLengths_;
+    /**
+     * <code>repeated uint32 device_id_lengths = 3;</code>
      */
     public java.util.List<java.lang.Integer>
-        getLengthsList() {
-      return lengths_;
+        getDeviceIdLengthsList() {
+      return deviceIdLengths_;
     }
     /**
-     * <code>repeated uint32 lengths = 2;</code>
+     * <code>repeated uint32 device_id_lengths = 3;</code>
      */
-    public int getLengthsCount() {
-      return lengths_.size();
+    public int getDeviceIdLengthsCount() {
+      return deviceIdLengths_.size();
     }
     /**
-     * <code>repeated uint32 lengths = 2;</code>
+     * <code>repeated uint32 device_id_lengths = 3;</code>
      */
-    public int getLengths(int index) {
-      return lengths_.get(index);
+    public int getDeviceIdLengths(int index) {
+      return deviceIdLengths_.get(index);
+    }
+
+    // repeated bytes moment_ids = 4;
+    public static final int MOMENT_IDS_FIELD_NUMBER = 4;
+    private java.util.List<com.google.protobuf.ByteString> momentIds_;
+    /**
+     * <code>repeated bytes moment_ids = 4;</code>
+     */
+    public java.util.List<com.google.protobuf.ByteString>
+        getMomentIdsList() {
+      return momentIds_;
+    }
+    /**
+     * <code>repeated bytes moment_ids = 4;</code>
+     */
+    public int getMomentIdsCount() {
+      return momentIds_.size();
+    }
+    /**
+     * <code>repeated bytes moment_ids = 4;</code>
+     */
+    public com.google.protobuf.ByteString getMomentIds(int index) {
+      return momentIds_.get(index);
+    }
+
+    // repeated uint32 moment_id_lengths = 5;
+    public static final int MOMENT_ID_LENGTHS_FIELD_NUMBER = 5;
+    private java.util.List<java.lang.Integer> momentIdLengths_;
+    /**
+     * <code>repeated uint32 moment_id_lengths = 5;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getMomentIdLengthsList() {
+      return momentIdLengths_;
+    }
+    /**
+     * <code>repeated uint32 moment_id_lengths = 5;</code>
+     */
+    public int getMomentIdLengthsCount() {
+      return momentIdLengths_.size();
+    }
+    /**
+     * <code>repeated uint32 moment_id_lengths = 5;</code>
+     */
+    public int getMomentIdLengths(int index) {
+      return momentIdLengths_.get(index);
     }
 
     private void initFields() {
-      ids_ = java.util.Collections.emptyList();
-      lengths_ = java.util.Collections.emptyList();
+      device_ = io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.getDefaultInstance();
+      deviceIds_ = java.util.Collections.emptyList();
+      deviceIdLengths_ = java.util.Collections.emptyList();
+      momentIds_ = java.util.Collections.emptyList();
+      momentIdLengths_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -2276,11 +3349,20 @@ public final class MessageProtos {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      for (int i = 0; i < ids_.size(); i++) {
-        output.writeBytes(1, ids_.get(i));
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeMessage(1, device_);
       }
-      for (int i = 0; i < lengths_.size(); i++) {
-        output.writeUInt32(2, lengths_.get(i));
+      for (int i = 0; i < deviceIds_.size(); i++) {
+        output.writeBytes(2, deviceIds_.get(i));
+      }
+      for (int i = 0; i < deviceIdLengths_.size(); i++) {
+        output.writeUInt32(3, deviceIdLengths_.get(i));
+      }
+      for (int i = 0; i < momentIds_.size(); i++) {
+        output.writeBytes(4, momentIds_.get(i));
+      }
+      for (int i = 0; i < momentIdLengths_.size(); i++) {
+        output.writeUInt32(5, momentIdLengths_.get(i));
       }
     }
 
@@ -2290,23 +3372,45 @@ public final class MessageProtos {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < ids_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(ids_.get(i));
-        }
-        size += dataSize;
-        size += 1 * getIdsList().size();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, device_);
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < lengths_.size(); i++) {
+        for (int i = 0; i < deviceIds_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(lengths_.get(i));
+            .computeBytesSizeNoTag(deviceIds_.get(i));
         }
         size += dataSize;
-        size += 1 * getLengthsList().size();
+        size += 1 * getDeviceIdsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < deviceIdLengths_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(deviceIdLengths_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getDeviceIdLengthsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < momentIds_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(momentIds_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getMomentIdsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < momentIdLengths_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(momentIdLengths_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getMomentIdLengthsList().size();
       }
       memoizedSerializedSize = size;
       return size;
@@ -2399,10 +3503,16 @@ public final class MessageProtos {
 
       public Builder clear() {
         super.clear();
-        ids_ = java.util.Collections.emptyList();
+        device_ = io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.getDefaultInstance();
         bitField0_ = (bitField0_ & ~0x00000001);
-        lengths_ = java.util.Collections.emptyList();
+        deviceIds_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        deviceIdLengths_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        momentIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        momentIdLengths_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -2425,38 +3535,77 @@ public final class MessageProtos {
       public io.rainbow.commonthread.protocolbuffers.MessageProtos.Sync buildPartial() {
         io.rainbow.commonthread.protocolbuffers.MessageProtos.Sync result = new io.rainbow.commonthread.protocolbuffers.MessageProtos.Sync(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          ids_ = java.util.Collections.unmodifiableList(ids_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
         }
-        result.ids_ = ids_;
+        result.device_ = device_;
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          lengths_ = java.util.Collections.unmodifiableList(lengths_);
+          deviceIds_ = java.util.Collections.unmodifiableList(deviceIds_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.lengths_ = lengths_;
+        result.deviceIds_ = deviceIds_;
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          deviceIdLengths_ = java.util.Collections.unmodifiableList(deviceIdLengths_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.deviceIdLengths_ = deviceIdLengths_;
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          momentIds_ = java.util.Collections.unmodifiableList(momentIds_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.momentIds_ = momentIds_;
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          momentIdLengths_ = java.util.Collections.unmodifiableList(momentIdLengths_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.momentIdLengths_ = momentIdLengths_;
+        result.bitField0_ = to_bitField0_;
         return result;
       }
 
       public Builder mergeFrom(io.rainbow.commonthread.protocolbuffers.MessageProtos.Sync other) {
         if (other == io.rainbow.commonthread.protocolbuffers.MessageProtos.Sync.getDefaultInstance()) return this;
-        if (!other.ids_.isEmpty()) {
-          if (ids_.isEmpty()) {
-            ids_ = other.ids_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+        if (other.hasDevice()) {
+          mergeDevice(other.getDevice());
+        }
+        if (!other.deviceIds_.isEmpty()) {
+          if (deviceIds_.isEmpty()) {
+            deviceIds_ = other.deviceIds_;
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
-            ensureIdsIsMutable();
-            ids_.addAll(other.ids_);
+            ensureDeviceIdsIsMutable();
+            deviceIds_.addAll(other.deviceIds_);
           }
           
         }
-        if (!other.lengths_.isEmpty()) {
-          if (lengths_.isEmpty()) {
-            lengths_ = other.lengths_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+        if (!other.deviceIdLengths_.isEmpty()) {
+          if (deviceIdLengths_.isEmpty()) {
+            deviceIdLengths_ = other.deviceIdLengths_;
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
-            ensureLengthsIsMutable();
-            lengths_.addAll(other.lengths_);
+            ensureDeviceIdLengthsIsMutable();
+            deviceIdLengths_.addAll(other.deviceIdLengths_);
+          }
+          
+        }
+        if (!other.momentIds_.isEmpty()) {
+          if (momentIds_.isEmpty()) {
+            momentIds_ = other.momentIds_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureMomentIdsIsMutable();
+            momentIds_.addAll(other.momentIds_);
+          }
+          
+        }
+        if (!other.momentIdLengths_.isEmpty()) {
+          if (momentIdLengths_.isEmpty()) {
+            momentIdLengths_ = other.momentIdLengths_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureMomentIdLengthsIsMutable();
+            momentIdLengths_.addAll(other.momentIdLengths_);
           }
           
         }
@@ -2486,140 +3635,339 @@ public final class MessageProtos {
       }
       private int bitField0_;
 
-      // repeated bytes ids = 1;
-      private java.util.List<com.google.protobuf.ByteString> ids_ = java.util.Collections.emptyList();
-      private void ensureIdsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          ids_ = new java.util.ArrayList<com.google.protobuf.ByteString>(ids_);
-          bitField0_ |= 0x00000001;
-         }
+      // optional .Device device = 1;
+      private io.rainbow.commonthread.protocolbuffers.MessageProtos.Device device_ = io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.getDefaultInstance();
+      /**
+       * <code>optional .Device device = 1;</code>
+       */
+      public boolean hasDevice() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>repeated bytes ids = 1;</code>
+       * <code>optional .Device device = 1;</code>
        */
-      public java.util.List<com.google.protobuf.ByteString>
-          getIdsList() {
-        return java.util.Collections.unmodifiableList(ids_);
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.Device getDevice() {
+        return device_;
       }
       /**
-       * <code>repeated bytes ids = 1;</code>
+       * <code>optional .Device device = 1;</code>
        */
-      public int getIdsCount() {
-        return ids_.size();
-      }
-      /**
-       * <code>repeated bytes ids = 1;</code>
-       */
-      public com.google.protobuf.ByteString getIds(int index) {
-        return ids_.get(index);
-      }
-      /**
-       * <code>repeated bytes ids = 1;</code>
-       */
-      public Builder setIds(
-          int index, com.google.protobuf.ByteString value) {
+      public Builder setDevice(io.rainbow.commonthread.protocolbuffers.MessageProtos.Device value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureIdsIsMutable();
-        ids_.set(index, value);
-        
+          throw new NullPointerException();
+        }
+        device_ = value;
+
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
-       * <code>repeated bytes ids = 1;</code>
+       * <code>optional .Device device = 1;</code>
        */
-      public Builder addIds(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureIdsIsMutable();
-        ids_.add(value);
-        
+      public Builder setDevice(
+          io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.Builder builderForValue) {
+        device_ = builderForValue.build();
+
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
-       * <code>repeated bytes ids = 1;</code>
+       * <code>optional .Device device = 1;</code>
        */
-      public Builder addAllIds(
-          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
-        ensureIdsIsMutable();
-        super.addAll(values, ids_);
-        
+      public Builder mergeDevice(io.rainbow.commonthread.protocolbuffers.MessageProtos.Device value) {
+        if (((bitField0_ & 0x00000001) == 0x00000001) &&
+            device_ != io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.getDefaultInstance()) {
+          device_ =
+            io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.newBuilder(device_).mergeFrom(value).buildPartial();
+        } else {
+          device_ = value;
+        }
+
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
-       * <code>repeated bytes ids = 1;</code>
+       * <code>optional .Device device = 1;</code>
        */
-      public Builder clearIds() {
-        ids_ = java.util.Collections.emptyList();
+      public Builder clearDevice() {
+        device_ = io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.getDefaultInstance();
+
         bitField0_ = (bitField0_ & ~0x00000001);
-        
         return this;
       }
 
-      // repeated uint32 lengths = 2;
-      private java.util.List<java.lang.Integer> lengths_ = java.util.Collections.emptyList();
-      private void ensureLengthsIsMutable() {
+      // repeated bytes device_ids = 2;
+      private java.util.List<com.google.protobuf.ByteString> deviceIds_ = java.util.Collections.emptyList();
+      private void ensureDeviceIdsIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          lengths_ = new java.util.ArrayList<java.lang.Integer>(lengths_);
+          deviceIds_ = new java.util.ArrayList<com.google.protobuf.ByteString>(deviceIds_);
           bitField0_ |= 0x00000002;
          }
       }
       /**
-       * <code>repeated uint32 lengths = 2;</code>
+       * <code>repeated bytes device_ids = 2;</code>
+       */
+      public java.util.List<com.google.protobuf.ByteString>
+          getDeviceIdsList() {
+        return java.util.Collections.unmodifiableList(deviceIds_);
+      }
+      /**
+       * <code>repeated bytes device_ids = 2;</code>
+       */
+      public int getDeviceIdsCount() {
+        return deviceIds_.size();
+      }
+      /**
+       * <code>repeated bytes device_ids = 2;</code>
+       */
+      public com.google.protobuf.ByteString getDeviceIds(int index) {
+        return deviceIds_.get(index);
+      }
+      /**
+       * <code>repeated bytes device_ids = 2;</code>
+       */
+      public Builder setDeviceIds(
+          int index, com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDeviceIdsIsMutable();
+        deviceIds_.set(index, value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated bytes device_ids = 2;</code>
+       */
+      public Builder addDeviceIds(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDeviceIdsIsMutable();
+        deviceIds_.add(value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated bytes device_ids = 2;</code>
+       */
+      public Builder addAllDeviceIds(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureDeviceIdsIsMutable();
+        super.addAll(values, deviceIds_);
+        
+        return this;
+      }
+      /**
+       * <code>repeated bytes device_ids = 2;</code>
+       */
+      public Builder clearDeviceIds() {
+        deviceIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        
+        return this;
+      }
+
+      // repeated uint32 device_id_lengths = 3;
+      private java.util.List<java.lang.Integer> deviceIdLengths_ = java.util.Collections.emptyList();
+      private void ensureDeviceIdLengthsIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          deviceIdLengths_ = new java.util.ArrayList<java.lang.Integer>(deviceIdLengths_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <code>repeated uint32 device_id_lengths = 3;</code>
        */
       public java.util.List<java.lang.Integer>
-          getLengthsList() {
-        return java.util.Collections.unmodifiableList(lengths_);
+          getDeviceIdLengthsList() {
+        return java.util.Collections.unmodifiableList(deviceIdLengths_);
       }
       /**
-       * <code>repeated uint32 lengths = 2;</code>
+       * <code>repeated uint32 device_id_lengths = 3;</code>
        */
-      public int getLengthsCount() {
-        return lengths_.size();
+      public int getDeviceIdLengthsCount() {
+        return deviceIdLengths_.size();
       }
       /**
-       * <code>repeated uint32 lengths = 2;</code>
+       * <code>repeated uint32 device_id_lengths = 3;</code>
        */
-      public int getLengths(int index) {
-        return lengths_.get(index);
+      public int getDeviceIdLengths(int index) {
+        return deviceIdLengths_.get(index);
       }
       /**
-       * <code>repeated uint32 lengths = 2;</code>
+       * <code>repeated uint32 device_id_lengths = 3;</code>
        */
-      public Builder setLengths(
+      public Builder setDeviceIdLengths(
           int index, int value) {
-        ensureLengthsIsMutable();
-        lengths_.set(index, value);
+        ensureDeviceIdLengthsIsMutable();
+        deviceIdLengths_.set(index, value);
         
         return this;
       }
       /**
-       * <code>repeated uint32 lengths = 2;</code>
+       * <code>repeated uint32 device_id_lengths = 3;</code>
        */
-      public Builder addLengths(int value) {
-        ensureLengthsIsMutable();
-        lengths_.add(value);
+      public Builder addDeviceIdLengths(int value) {
+        ensureDeviceIdLengthsIsMutable();
+        deviceIdLengths_.add(value);
         
         return this;
       }
       /**
-       * <code>repeated uint32 lengths = 2;</code>
+       * <code>repeated uint32 device_id_lengths = 3;</code>
        */
-      public Builder addAllLengths(
+      public Builder addAllDeviceIdLengths(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureLengthsIsMutable();
-        super.addAll(values, lengths_);
+        ensureDeviceIdLengthsIsMutable();
+        super.addAll(values, deviceIdLengths_);
         
         return this;
       }
       /**
-       * <code>repeated uint32 lengths = 2;</code>
+       * <code>repeated uint32 device_id_lengths = 3;</code>
        */
-      public Builder clearLengths() {
-        lengths_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+      public Builder clearDeviceIdLengths() {
+        deviceIdLengths_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        
+        return this;
+      }
+
+      // repeated bytes moment_ids = 4;
+      private java.util.List<com.google.protobuf.ByteString> momentIds_ = java.util.Collections.emptyList();
+      private void ensureMomentIdsIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          momentIds_ = new java.util.ArrayList<com.google.protobuf.ByteString>(momentIds_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      /**
+       * <code>repeated bytes moment_ids = 4;</code>
+       */
+      public java.util.List<com.google.protobuf.ByteString>
+          getMomentIdsList() {
+        return java.util.Collections.unmodifiableList(momentIds_);
+      }
+      /**
+       * <code>repeated bytes moment_ids = 4;</code>
+       */
+      public int getMomentIdsCount() {
+        return momentIds_.size();
+      }
+      /**
+       * <code>repeated bytes moment_ids = 4;</code>
+       */
+      public com.google.protobuf.ByteString getMomentIds(int index) {
+        return momentIds_.get(index);
+      }
+      /**
+       * <code>repeated bytes moment_ids = 4;</code>
+       */
+      public Builder setMomentIds(
+          int index, com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMomentIdsIsMutable();
+        momentIds_.set(index, value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated bytes moment_ids = 4;</code>
+       */
+      public Builder addMomentIds(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMomentIdsIsMutable();
+        momentIds_.add(value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated bytes moment_ids = 4;</code>
+       */
+      public Builder addAllMomentIds(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureMomentIdsIsMutable();
+        super.addAll(values, momentIds_);
+        
+        return this;
+      }
+      /**
+       * <code>repeated bytes moment_ids = 4;</code>
+       */
+      public Builder clearMomentIds() {
+        momentIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        
+        return this;
+      }
+
+      // repeated uint32 moment_id_lengths = 5;
+      private java.util.List<java.lang.Integer> momentIdLengths_ = java.util.Collections.emptyList();
+      private void ensureMomentIdLengthsIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          momentIdLengths_ = new java.util.ArrayList<java.lang.Integer>(momentIdLengths_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+      /**
+       * <code>repeated uint32 moment_id_lengths = 5;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getMomentIdLengthsList() {
+        return java.util.Collections.unmodifiableList(momentIdLengths_);
+      }
+      /**
+       * <code>repeated uint32 moment_id_lengths = 5;</code>
+       */
+      public int getMomentIdLengthsCount() {
+        return momentIdLengths_.size();
+      }
+      /**
+       * <code>repeated uint32 moment_id_lengths = 5;</code>
+       */
+      public int getMomentIdLengths(int index) {
+        return momentIdLengths_.get(index);
+      }
+      /**
+       * <code>repeated uint32 moment_id_lengths = 5;</code>
+       */
+      public Builder setMomentIdLengths(
+          int index, int value) {
+        ensureMomentIdLengthsIsMutable();
+        momentIdLengths_.set(index, value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated uint32 moment_id_lengths = 5;</code>
+       */
+      public Builder addMomentIdLengths(int value) {
+        ensureMomentIdLengthsIsMutable();
+        momentIdLengths_.add(value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated uint32 moment_id_lengths = 5;</code>
+       */
+      public Builder addAllMomentIdLengths(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureMomentIdLengthsIsMutable();
+        super.addAll(values, momentIdLengths_);
+        
+        return this;
+      }
+      /**
+       * <code>repeated uint32 moment_id_lengths = 5;</code>
+       */
+      public Builder clearMomentIdLengths() {
+        momentIdLengths_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
         
         return this;
       }
@@ -2633,6 +3981,1103 @@ public final class MessageProtos {
     }
 
     // @@protoc_insertion_point(class_scope:Sync)
+  }
+
+  public interface DiffOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+
+    // repeated .Device devices = 1;
+    /**
+     * <code>repeated .Device devices = 1;</code>
+     */
+    java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.Device> 
+        getDevicesList();
+    /**
+     * <code>repeated .Device devices = 1;</code>
+     */
+    io.rainbow.commonthread.protocolbuffers.MessageProtos.Device getDevices(int index);
+    /**
+     * <code>repeated .Device devices = 1;</code>
+     */
+    int getDevicesCount();
+
+    // repeated .DeviceSequence device_sequences = 2;
+    /**
+     * <code>repeated .DeviceSequence device_sequences = 2;</code>
+     */
+    java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence> 
+        getDeviceSequencesList();
+    /**
+     * <code>repeated .DeviceSequence device_sequences = 2;</code>
+     */
+    io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence getDeviceSequences(int index);
+    /**
+     * <code>repeated .DeviceSequence device_sequences = 2;</code>
+     */
+    int getDeviceSequencesCount();
+
+    // repeated .Moment moments = 3;
+    /**
+     * <code>repeated .Moment moments = 3;</code>
+     */
+    java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment> 
+        getMomentsList();
+    /**
+     * <code>repeated .Moment moments = 3;</code>
+     */
+    io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment getMoments(int index);
+    /**
+     * <code>repeated .Moment moments = 3;</code>
+     */
+    int getMomentsCount();
+
+    // repeated .MomentSequence moment_sequences = 4;
+    /**
+     * <code>repeated .MomentSequence moment_sequences = 4;</code>
+     */
+    java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence> 
+        getMomentSequencesList();
+    /**
+     * <code>repeated .MomentSequence moment_sequences = 4;</code>
+     */
+    io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence getMomentSequences(int index);
+    /**
+     * <code>repeated .MomentSequence moment_sequences = 4;</code>
+     */
+    int getMomentSequencesCount();
+  }
+  /**
+   * Protobuf type {@code Diff}
+   */
+  public static final class Diff extends
+      com.google.protobuf.GeneratedMessageLite
+      implements DiffOrBuilder {
+    // Use Diff.newBuilder() to construct.
+    private Diff(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+
+    }
+    private Diff(boolean noInit) {}
+
+    private static final Diff defaultInstance;
+    public static Diff getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public Diff getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private Diff(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                devices_ = new java.util.ArrayList<io.rainbow.commonthread.protocolbuffers.MessageProtos.Device>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              devices_.add(input.readMessage(io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.PARSER, extensionRegistry));
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                deviceSequences_ = new java.util.ArrayList<io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              deviceSequences_.add(input.readMessage(io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence.PARSER, extensionRegistry));
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                moments_ = new java.util.ArrayList<io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              moments_.add(input.readMessage(io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment.PARSER, extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                momentSequences_ = new java.util.ArrayList<io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              momentSequences_.add(input.readMessage(io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          devices_ = java.util.Collections.unmodifiableList(devices_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          deviceSequences_ = java.util.Collections.unmodifiableList(deviceSequences_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          moments_ = java.util.Collections.unmodifiableList(moments_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          momentSequences_ = java.util.Collections.unmodifiableList(momentSequences_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<Diff> PARSER =
+        new com.google.protobuf.AbstractParser<Diff>() {
+      public Diff parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Diff(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Diff> getParserForType() {
+      return PARSER;
+    }
+
+    // repeated .Device devices = 1;
+    public static final int DEVICES_FIELD_NUMBER = 1;
+    private java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.Device> devices_;
+    /**
+     * <code>repeated .Device devices = 1;</code>
+     */
+    public java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.Device> getDevicesList() {
+      return devices_;
+    }
+    /**
+     * <code>repeated .Device devices = 1;</code>
+     */
+    public java.util.List<? extends io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceOrBuilder> 
+        getDevicesOrBuilderList() {
+      return devices_;
+    }
+    /**
+     * <code>repeated .Device devices = 1;</code>
+     */
+    public int getDevicesCount() {
+      return devices_.size();
+    }
+    /**
+     * <code>repeated .Device devices = 1;</code>
+     */
+    public io.rainbow.commonthread.protocolbuffers.MessageProtos.Device getDevices(int index) {
+      return devices_.get(index);
+    }
+    /**
+     * <code>repeated .Device devices = 1;</code>
+     */
+    public io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceOrBuilder getDevicesOrBuilder(
+        int index) {
+      return devices_.get(index);
+    }
+
+    // repeated .DeviceSequence device_sequences = 2;
+    public static final int DEVICE_SEQUENCES_FIELD_NUMBER = 2;
+    private java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence> deviceSequences_;
+    /**
+     * <code>repeated .DeviceSequence device_sequences = 2;</code>
+     */
+    public java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence> getDeviceSequencesList() {
+      return deviceSequences_;
+    }
+    /**
+     * <code>repeated .DeviceSequence device_sequences = 2;</code>
+     */
+    public java.util.List<? extends io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequenceOrBuilder> 
+        getDeviceSequencesOrBuilderList() {
+      return deviceSequences_;
+    }
+    /**
+     * <code>repeated .DeviceSequence device_sequences = 2;</code>
+     */
+    public int getDeviceSequencesCount() {
+      return deviceSequences_.size();
+    }
+    /**
+     * <code>repeated .DeviceSequence device_sequences = 2;</code>
+     */
+    public io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence getDeviceSequences(int index) {
+      return deviceSequences_.get(index);
+    }
+    /**
+     * <code>repeated .DeviceSequence device_sequences = 2;</code>
+     */
+    public io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequenceOrBuilder getDeviceSequencesOrBuilder(
+        int index) {
+      return deviceSequences_.get(index);
+    }
+
+    // repeated .Moment moments = 3;
+    public static final int MOMENTS_FIELD_NUMBER = 3;
+    private java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment> moments_;
+    /**
+     * <code>repeated .Moment moments = 3;</code>
+     */
+    public java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment> getMomentsList() {
+      return moments_;
+    }
+    /**
+     * <code>repeated .Moment moments = 3;</code>
+     */
+    public java.util.List<? extends io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentOrBuilder> 
+        getMomentsOrBuilderList() {
+      return moments_;
+    }
+    /**
+     * <code>repeated .Moment moments = 3;</code>
+     */
+    public int getMomentsCount() {
+      return moments_.size();
+    }
+    /**
+     * <code>repeated .Moment moments = 3;</code>
+     */
+    public io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment getMoments(int index) {
+      return moments_.get(index);
+    }
+    /**
+     * <code>repeated .Moment moments = 3;</code>
+     */
+    public io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentOrBuilder getMomentsOrBuilder(
+        int index) {
+      return moments_.get(index);
+    }
+
+    // repeated .MomentSequence moment_sequences = 4;
+    public static final int MOMENT_SEQUENCES_FIELD_NUMBER = 4;
+    private java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence> momentSequences_;
+    /**
+     * <code>repeated .MomentSequence moment_sequences = 4;</code>
+     */
+    public java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence> getMomentSequencesList() {
+      return momentSequences_;
+    }
+    /**
+     * <code>repeated .MomentSequence moment_sequences = 4;</code>
+     */
+    public java.util.List<? extends io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequenceOrBuilder> 
+        getMomentSequencesOrBuilderList() {
+      return momentSequences_;
+    }
+    /**
+     * <code>repeated .MomentSequence moment_sequences = 4;</code>
+     */
+    public int getMomentSequencesCount() {
+      return momentSequences_.size();
+    }
+    /**
+     * <code>repeated .MomentSequence moment_sequences = 4;</code>
+     */
+    public io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence getMomentSequences(int index) {
+      return momentSequences_.get(index);
+    }
+    /**
+     * <code>repeated .MomentSequence moment_sequences = 4;</code>
+     */
+    public io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequenceOrBuilder getMomentSequencesOrBuilder(
+        int index) {
+      return momentSequences_.get(index);
+    }
+
+    private void initFields() {
+      devices_ = java.util.Collections.emptyList();
+      deviceSequences_ = java.util.Collections.emptyList();
+      moments_ = java.util.Collections.emptyList();
+      momentSequences_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < devices_.size(); i++) {
+        output.writeMessage(1, devices_.get(i));
+      }
+      for (int i = 0; i < deviceSequences_.size(); i++) {
+        output.writeMessage(2, deviceSequences_.get(i));
+      }
+      for (int i = 0; i < moments_.size(); i++) {
+        output.writeMessage(3, moments_.get(i));
+      }
+      for (int i = 0; i < momentSequences_.size(); i++) {
+        output.writeMessage(4, momentSequences_.get(i));
+      }
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < devices_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, devices_.get(i));
+      }
+      for (int i = 0; i < deviceSequences_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, deviceSequences_.get(i));
+      }
+      for (int i = 0; i < moments_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, moments_.get(i));
+      }
+      for (int i = 0; i < momentSequences_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, momentSequences_.get(i));
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code Diff}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff, Builder>
+        implements io.rainbow.commonthread.protocolbuffers.MessageProtos.DiffOrBuilder {
+      // Construct using io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        devices_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        deviceSequences_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        moments_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        momentSequences_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff getDefaultInstanceForType() {
+        return io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff.getDefaultInstance();
+      }
+
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff build() {
+        io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff buildPartial() {
+        io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff result = new io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          devices_ = java.util.Collections.unmodifiableList(devices_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.devices_ = devices_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          deviceSequences_ = java.util.Collections.unmodifiableList(deviceSequences_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.deviceSequences_ = deviceSequences_;
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          moments_ = java.util.Collections.unmodifiableList(moments_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.moments_ = moments_;
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          momentSequences_ = java.util.Collections.unmodifiableList(momentSequences_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.momentSequences_ = momentSequences_;
+        return result;
+      }
+
+      public Builder mergeFrom(io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff other) {
+        if (other == io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff.getDefaultInstance()) return this;
+        if (!other.devices_.isEmpty()) {
+          if (devices_.isEmpty()) {
+            devices_ = other.devices_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureDevicesIsMutable();
+            devices_.addAll(other.devices_);
+          }
+          
+        }
+        if (!other.deviceSequences_.isEmpty()) {
+          if (deviceSequences_.isEmpty()) {
+            deviceSequences_ = other.deviceSequences_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureDeviceSequencesIsMutable();
+            deviceSequences_.addAll(other.deviceSequences_);
+          }
+          
+        }
+        if (!other.moments_.isEmpty()) {
+          if (moments_.isEmpty()) {
+            moments_ = other.moments_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureMomentsIsMutable();
+            moments_.addAll(other.moments_);
+          }
+          
+        }
+        if (!other.momentSequences_.isEmpty()) {
+          if (momentSequences_.isEmpty()) {
+            momentSequences_ = other.momentSequences_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureMomentSequencesIsMutable();
+            momentSequences_.addAll(other.momentSequences_);
+          }
+          
+        }
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.rainbow.commonthread.protocolbuffers.MessageProtos.Diff) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // repeated .Device devices = 1;
+      private java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.Device> devices_ =
+        java.util.Collections.emptyList();
+      private void ensureDevicesIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          devices_ = new java.util.ArrayList<io.rainbow.commonthread.protocolbuffers.MessageProtos.Device>(devices_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      /**
+       * <code>repeated .Device devices = 1;</code>
+       */
+      public java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.Device> getDevicesList() {
+        return java.util.Collections.unmodifiableList(devices_);
+      }
+      /**
+       * <code>repeated .Device devices = 1;</code>
+       */
+      public int getDevicesCount() {
+        return devices_.size();
+      }
+      /**
+       * <code>repeated .Device devices = 1;</code>
+       */
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.Device getDevices(int index) {
+        return devices_.get(index);
+      }
+      /**
+       * <code>repeated .Device devices = 1;</code>
+       */
+      public Builder setDevices(
+          int index, io.rainbow.commonthread.protocolbuffers.MessageProtos.Device value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDevicesIsMutable();
+        devices_.set(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .Device devices = 1;</code>
+       */
+      public Builder setDevices(
+          int index, io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.Builder builderForValue) {
+        ensureDevicesIsMutable();
+        devices_.set(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .Device devices = 1;</code>
+       */
+      public Builder addDevices(io.rainbow.commonthread.protocolbuffers.MessageProtos.Device value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDevicesIsMutable();
+        devices_.add(value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .Device devices = 1;</code>
+       */
+      public Builder addDevices(
+          int index, io.rainbow.commonthread.protocolbuffers.MessageProtos.Device value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDevicesIsMutable();
+        devices_.add(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .Device devices = 1;</code>
+       */
+      public Builder addDevices(
+          io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.Builder builderForValue) {
+        ensureDevicesIsMutable();
+        devices_.add(builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .Device devices = 1;</code>
+       */
+      public Builder addDevices(
+          int index, io.rainbow.commonthread.protocolbuffers.MessageProtos.Device.Builder builderForValue) {
+        ensureDevicesIsMutable();
+        devices_.add(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .Device devices = 1;</code>
+       */
+      public Builder addAllDevices(
+          java.lang.Iterable<? extends io.rainbow.commonthread.protocolbuffers.MessageProtos.Device> values) {
+        ensureDevicesIsMutable();
+        super.addAll(values, devices_);
+
+        return this;
+      }
+      /**
+       * <code>repeated .Device devices = 1;</code>
+       */
+      public Builder clearDevices() {
+        devices_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+
+        return this;
+      }
+      /**
+       * <code>repeated .Device devices = 1;</code>
+       */
+      public Builder removeDevices(int index) {
+        ensureDevicesIsMutable();
+        devices_.remove(index);
+
+        return this;
+      }
+
+      // repeated .DeviceSequence device_sequences = 2;
+      private java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence> deviceSequences_ =
+        java.util.Collections.emptyList();
+      private void ensureDeviceSequencesIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          deviceSequences_ = new java.util.ArrayList<io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence>(deviceSequences_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      /**
+       * <code>repeated .DeviceSequence device_sequences = 2;</code>
+       */
+      public java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence> getDeviceSequencesList() {
+        return java.util.Collections.unmodifiableList(deviceSequences_);
+      }
+      /**
+       * <code>repeated .DeviceSequence device_sequences = 2;</code>
+       */
+      public int getDeviceSequencesCount() {
+        return deviceSequences_.size();
+      }
+      /**
+       * <code>repeated .DeviceSequence device_sequences = 2;</code>
+       */
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence getDeviceSequences(int index) {
+        return deviceSequences_.get(index);
+      }
+      /**
+       * <code>repeated .DeviceSequence device_sequences = 2;</code>
+       */
+      public Builder setDeviceSequences(
+          int index, io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDeviceSequencesIsMutable();
+        deviceSequences_.set(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .DeviceSequence device_sequences = 2;</code>
+       */
+      public Builder setDeviceSequences(
+          int index, io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence.Builder builderForValue) {
+        ensureDeviceSequencesIsMutable();
+        deviceSequences_.set(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .DeviceSequence device_sequences = 2;</code>
+       */
+      public Builder addDeviceSequences(io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDeviceSequencesIsMutable();
+        deviceSequences_.add(value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .DeviceSequence device_sequences = 2;</code>
+       */
+      public Builder addDeviceSequences(
+          int index, io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDeviceSequencesIsMutable();
+        deviceSequences_.add(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .DeviceSequence device_sequences = 2;</code>
+       */
+      public Builder addDeviceSequences(
+          io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence.Builder builderForValue) {
+        ensureDeviceSequencesIsMutable();
+        deviceSequences_.add(builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .DeviceSequence device_sequences = 2;</code>
+       */
+      public Builder addDeviceSequences(
+          int index, io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence.Builder builderForValue) {
+        ensureDeviceSequencesIsMutable();
+        deviceSequences_.add(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .DeviceSequence device_sequences = 2;</code>
+       */
+      public Builder addAllDeviceSequences(
+          java.lang.Iterable<? extends io.rainbow.commonthread.protocolbuffers.MessageProtos.DeviceSequence> values) {
+        ensureDeviceSequencesIsMutable();
+        super.addAll(values, deviceSequences_);
+
+        return this;
+      }
+      /**
+       * <code>repeated .DeviceSequence device_sequences = 2;</code>
+       */
+      public Builder clearDeviceSequences() {
+        deviceSequences_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+
+        return this;
+      }
+      /**
+       * <code>repeated .DeviceSequence device_sequences = 2;</code>
+       */
+      public Builder removeDeviceSequences(int index) {
+        ensureDeviceSequencesIsMutable();
+        deviceSequences_.remove(index);
+
+        return this;
+      }
+
+      // repeated .Moment moments = 3;
+      private java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment> moments_ =
+        java.util.Collections.emptyList();
+      private void ensureMomentsIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          moments_ = new java.util.ArrayList<io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment>(moments_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      /**
+       * <code>repeated .Moment moments = 3;</code>
+       */
+      public java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment> getMomentsList() {
+        return java.util.Collections.unmodifiableList(moments_);
+      }
+      /**
+       * <code>repeated .Moment moments = 3;</code>
+       */
+      public int getMomentsCount() {
+        return moments_.size();
+      }
+      /**
+       * <code>repeated .Moment moments = 3;</code>
+       */
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment getMoments(int index) {
+        return moments_.get(index);
+      }
+      /**
+       * <code>repeated .Moment moments = 3;</code>
+       */
+      public Builder setMoments(
+          int index, io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMomentsIsMutable();
+        moments_.set(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .Moment moments = 3;</code>
+       */
+      public Builder setMoments(
+          int index, io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment.Builder builderForValue) {
+        ensureMomentsIsMutable();
+        moments_.set(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .Moment moments = 3;</code>
+       */
+      public Builder addMoments(io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMomentsIsMutable();
+        moments_.add(value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .Moment moments = 3;</code>
+       */
+      public Builder addMoments(
+          int index, io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMomentsIsMutable();
+        moments_.add(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .Moment moments = 3;</code>
+       */
+      public Builder addMoments(
+          io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment.Builder builderForValue) {
+        ensureMomentsIsMutable();
+        moments_.add(builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .Moment moments = 3;</code>
+       */
+      public Builder addMoments(
+          int index, io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment.Builder builderForValue) {
+        ensureMomentsIsMutable();
+        moments_.add(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .Moment moments = 3;</code>
+       */
+      public Builder addAllMoments(
+          java.lang.Iterable<? extends io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment> values) {
+        ensureMomentsIsMutable();
+        super.addAll(values, moments_);
+
+        return this;
+      }
+      /**
+       * <code>repeated .Moment moments = 3;</code>
+       */
+      public Builder clearMoments() {
+        moments_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+
+        return this;
+      }
+      /**
+       * <code>repeated .Moment moments = 3;</code>
+       */
+      public Builder removeMoments(int index) {
+        ensureMomentsIsMutable();
+        moments_.remove(index);
+
+        return this;
+      }
+
+      // repeated .MomentSequence moment_sequences = 4;
+      private java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence> momentSequences_ =
+        java.util.Collections.emptyList();
+      private void ensureMomentSequencesIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          momentSequences_ = new java.util.ArrayList<io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence>(momentSequences_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      /**
+       * <code>repeated .MomentSequence moment_sequences = 4;</code>
+       */
+      public java.util.List<io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence> getMomentSequencesList() {
+        return java.util.Collections.unmodifiableList(momentSequences_);
+      }
+      /**
+       * <code>repeated .MomentSequence moment_sequences = 4;</code>
+       */
+      public int getMomentSequencesCount() {
+        return momentSequences_.size();
+      }
+      /**
+       * <code>repeated .MomentSequence moment_sequences = 4;</code>
+       */
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence getMomentSequences(int index) {
+        return momentSequences_.get(index);
+      }
+      /**
+       * <code>repeated .MomentSequence moment_sequences = 4;</code>
+       */
+      public Builder setMomentSequences(
+          int index, io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMomentSequencesIsMutable();
+        momentSequences_.set(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .MomentSequence moment_sequences = 4;</code>
+       */
+      public Builder setMomentSequences(
+          int index, io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence.Builder builderForValue) {
+        ensureMomentSequencesIsMutable();
+        momentSequences_.set(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .MomentSequence moment_sequences = 4;</code>
+       */
+      public Builder addMomentSequences(io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMomentSequencesIsMutable();
+        momentSequences_.add(value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .MomentSequence moment_sequences = 4;</code>
+       */
+      public Builder addMomentSequences(
+          int index, io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMomentSequencesIsMutable();
+        momentSequences_.add(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .MomentSequence moment_sequences = 4;</code>
+       */
+      public Builder addMomentSequences(
+          io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence.Builder builderForValue) {
+        ensureMomentSequencesIsMutable();
+        momentSequences_.add(builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .MomentSequence moment_sequences = 4;</code>
+       */
+      public Builder addMomentSequences(
+          int index, io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence.Builder builderForValue) {
+        ensureMomentSequencesIsMutable();
+        momentSequences_.add(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .MomentSequence moment_sequences = 4;</code>
+       */
+      public Builder addAllMomentSequences(
+          java.lang.Iterable<? extends io.rainbow.commonthread.protocolbuffers.MessageProtos.MomentSequence> values) {
+        ensureMomentSequencesIsMutable();
+        super.addAll(values, momentSequences_);
+
+        return this;
+      }
+      /**
+       * <code>repeated .MomentSequence moment_sequences = 4;</code>
+       */
+      public Builder clearMomentSequences() {
+        momentSequences_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+
+        return this;
+      }
+      /**
+       * <code>repeated .MomentSequence moment_sequences = 4;</code>
+       */
+      public Builder removeMomentSequences(int index) {
+        ensureMomentSequencesIsMutable();
+        momentSequences_.remove(index);
+
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:Diff)
+    }
+
+    static {
+      defaultInstance = new Diff(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:Diff)
   }
 
 

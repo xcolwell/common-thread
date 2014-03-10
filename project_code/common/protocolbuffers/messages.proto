@@ -14,11 +14,13 @@ message Device {
 }
 
 message DeviceSequence {
-	repeated uint32 sequence = 1;
+	repeated bytes id = 1;
+
+	repeated uint32 sequence = 2;
 	/* corner and control points from previous to next */
-	repeated float interpolation = 2;
+	repeated float interpolation = 3;
 	/* spline distances from previous to next (approximate) */
-	repeated float distances = 3;
+	repeated float distances = 4;
 }
 
 message Moment {
@@ -28,8 +30,10 @@ message Moment {
 }
 
 message MomentSequence {
-	optional double sequence = 1;
-	optional bool deleted = 2;
+	repeated bytes id = 1;
+
+	optional double sequence = 2;
+	optional bool deleted = 3;
 }
 
 message Sync {
@@ -40,4 +44,12 @@ message Sync {
 
 	repeated bytes moment_ids = 4;
 	repeated uint32 moment_id_lengths = 5;
+}
+
+message Diff {
+	repeated Device devices = 1;
+	repeated DeviceSequence device_sequences = 2;
+
+	repeated Moment moments = 3;
+	repeated MomentSequence moment_sequences = 4;
 }
