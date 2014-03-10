@@ -8,6 +8,344 @@ public final class MessageProtos {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+  public interface HeaderOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+  }
+  /**
+   * Protobuf type {@code Header}
+   */
+  public static final class Header extends
+      com.google.protobuf.GeneratedMessageLite
+      implements HeaderOrBuilder {
+    // Use Header.newBuilder() to construct.
+    private Header(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+
+    }
+    private Header(boolean noInit) {}
+
+    private static final Header defaultInstance;
+    public static Header getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public Header getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private Header(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<Header> PARSER =
+        new com.google.protobuf.AbstractParser<Header>() {
+      public Header parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Header(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Header> getParserForType() {
+      return PARSER;
+    }
+
+    /**
+     * Protobuf enum {@code Header.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.Internal.EnumLite {
+      /**
+       * <code>Device = 1;</code>
+       */
+      Device(0, 1),
+      /**
+       * <code>DeviceSequence = 2;</code>
+       */
+      DeviceSequence(1, 2),
+      /**
+       * <code>Moment = 3;</code>
+       */
+      Moment(2, 3),
+      /**
+       * <code>MomentSequence = 4;</code>
+       */
+      MomentSequence(3, 4),
+      /**
+       * <code>Sync = 5;</code>
+       */
+      Sync(4, 5),
+      /**
+       * <code>Diff = 6;</code>
+       */
+      Diff(5, 6),
+      ;
+
+      /**
+       * <code>Device = 1;</code>
+       */
+      public static final int Device_VALUE = 1;
+      /**
+       * <code>DeviceSequence = 2;</code>
+       */
+      public static final int DeviceSequence_VALUE = 2;
+      /**
+       * <code>Moment = 3;</code>
+       */
+      public static final int Moment_VALUE = 3;
+      /**
+       * <code>MomentSequence = 4;</code>
+       */
+      public static final int MomentSequence_VALUE = 4;
+      /**
+       * <code>Sync = 5;</code>
+       */
+      public static final int Sync_VALUE = 5;
+      /**
+       * <code>Diff = 6;</code>
+       */
+      public static final int Diff_VALUE = 6;
+
+
+      public final int getNumber() { return value; }
+
+      public static Type valueOf(int value) {
+        switch (value) {
+          case 1: return Device;
+          case 2: return DeviceSequence;
+          case 3: return Moment;
+          case 4: return MomentSequence;
+          case 5: return Sync;
+          case 6: return Diff;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.valueOf(number);
+              }
+            };
+
+      private final int value;
+
+      private Type(int index, int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:Header.Type)
+    }
+
+    private void initFields() {
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Header parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Header parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Header parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Header parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Header parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Header parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Header parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Header parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Header parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static io.rainbow.commonthread.protocolbuffers.MessageProtos.Header parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(io.rainbow.commonthread.protocolbuffers.MessageProtos.Header prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code Header}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          io.rainbow.commonthread.protocolbuffers.MessageProtos.Header, Builder>
+        implements io.rainbow.commonthread.protocolbuffers.MessageProtos.HeaderOrBuilder {
+      // Construct using io.rainbow.commonthread.protocolbuffers.MessageProtos.Header.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.Header getDefaultInstanceForType() {
+        return io.rainbow.commonthread.protocolbuffers.MessageProtos.Header.getDefaultInstance();
+      }
+
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.Header build() {
+        io.rainbow.commonthread.protocolbuffers.MessageProtos.Header result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public io.rainbow.commonthread.protocolbuffers.MessageProtos.Header buildPartial() {
+        io.rainbow.commonthread.protocolbuffers.MessageProtos.Header result = new io.rainbow.commonthread.protocolbuffers.MessageProtos.Header(this);
+        return result;
+      }
+
+      public Builder mergeFrom(io.rainbow.commonthread.protocolbuffers.MessageProtos.Header other) {
+        if (other == io.rainbow.commonthread.protocolbuffers.MessageProtos.Header.getDefaultInstance()) return this;
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.rainbow.commonthread.protocolbuffers.MessageProtos.Header parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.rainbow.commonthread.protocolbuffers.MessageProtos.Header) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:Header)
+    }
+
+    static {
+      defaultInstance = new Header(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:Header)
+  }
+
   public interface DeviceOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
 

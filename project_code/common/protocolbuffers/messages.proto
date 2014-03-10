@@ -5,6 +5,17 @@ option optimize_for = LITE_RUNTIME;
 
 /* all messages are bi-directional (client to server, server to client) */
 
+message Header {
+	enum Type {
+		Device = 1;
+		DeviceSequence = 2;
+		Moment = 3;
+		MomentSequence = 4;
+		Sync = 5;
+		Diff = 6;
+	}
+}
+
 message Device {
 	repeated bytes id = 1;
 	repeated double position = 2;

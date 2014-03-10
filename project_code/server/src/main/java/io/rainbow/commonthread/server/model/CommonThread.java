@@ -1,9 +1,6 @@
 
 package io.rainbow.commonthread.server.model;
 
-import io.rainbow.commonthread.protocolbuffers.MessageProtos.Device;
-import io.rainbow.commonthread.protocolbuffers.MessageProtos.Moment;
-
 import java.util.Collection;
 
 import com.google.protobuf.ByteString;
@@ -15,45 +12,45 @@ public class CommonThread {
     // TODO max moments per device
     // TODO max devices
 
-    public Collection<Device> getDevices() {
+    public Collection<DeviceModel> getDevices() {
         throw new UnsupportedOperationException();
     }
 
-    public Collection<Moment> getMoments() {
+    public Collection<MomentModel> getMoments() {
         throw new UnsupportedOperationException();
     }
 
-    public Device updateDevice(Device device) {
+    public DeviceModel updateDevice(DeviceModel device) {
         throw new UnsupportedOperationException();
     }
 
-    public Moment updateMoment(Moment moment) {
+    public MomentModel updateMoment(MomentModel moment) {
         throw new UnsupportedOperationException();
     }
 
-    public void removeDevice(Device device) {
+    public void removeDevice(ByteString id) {
         throw new UnsupportedOperationException();
     }
 
     public static interface Persistence {
-        void addDevice(Device device);
+        void addDevice(DeviceModel device);
 
         void removeDevice(ByteString id);
 
-        void addMoment(Moment moment);
+        void addMoment(MomentModel moment);
 
         void removeMoment(ByteString id);
 
         int getPendingOpCount();
 
-        Device[] listDevices();
+        DeviceModel[] listDevices();
 
-        Moment[] listMoments();
+        MomentModel[] listMoments();
     }
 
     public static interface ChangeListener {
-        void onDeviceChanged(Device device);
+        void onDeviceChanged(DeviceModel device);
 
-        void onMomentChanged(Moment moment);
+        void onMomentChanged(MomentModel moment);
     }
 }

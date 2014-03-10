@@ -5,12 +5,14 @@ import javax.annotation.Nullable;
 
 import com.google.protobuf.ByteString;
 
-public final class Device {
+public final class DeviceModel {
     public ByteString id;
     public double[] position;
     public float[] orientation;
 
-    public @Nullable Device anchor = null;
+    public @Nullable DeviceModel anchor = null;
+    
+    public long lastUpdateTime = -1L;
 
     public int sequence;
     /* corner[-1] controls[-1] corner[0] controls[0] corner[1] */
