@@ -71,17 +71,26 @@ public class CommonThreadServerHandler extends ChannelInboundHandlerAdapter {
 
     
     
-    private static final class Model {
+    private final class Model {
         Executor modelUpdateExecutor;
-        private CommonThread commonThread;
+        CommonThread commonThread;
+        
         
         void update(final ModelUpdate update) {
             modelUpdateExecutor.execute(() ->
-                    update.run(commonThread));
+            
+                    update.run(commonThread)
+                    
+                    // FIXME take the changes via the ChangeListener
+                    // FIXME and propagate them to all connected devices
+                    // FIXME in a single Diff
+                    
+                    );
         }
         
-        static interface ModelUpdate {
-            void run(CommonThread commonThread);
-        }
+        
+    }
+    static interface ModelUpdate {
+        void run(CommonThread commonThread);
     }
 }
